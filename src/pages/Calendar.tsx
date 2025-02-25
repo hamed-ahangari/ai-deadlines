@@ -26,7 +26,8 @@ const categoryColors: Record<string, string> = {
   "robotics": "bg-green-500",
   "signal-processing": "bg-cyan-500",
   "data-mining": "bg-pink-500",
-  "automated-planning": "bg-yellow-500",
+  "reinforcement-learning": "bg-yellow-500",
+  "automated-planning": "bg-amber-500",
   "other": "bg-gray-500"
 };
 
@@ -37,6 +38,7 @@ const categoryNames: Record<string, string> = {
   "robotics": "Robotics",
   "signal-processing": "Speech/Signal Processing",
   "data-mining": "Data Mining",
+  "reinforcement-learning": "Reinforcement Learning",
   "automated-planning": "Automated Planning",
   "other": "Other"
 };
@@ -47,6 +49,7 @@ const orderedCategories = [
   "computer-vision",
   "natural-language-processing",
   "robotics",
+  "reinforcement-learning",
   "signal-processing",
   "data-mining",
   "automated-planning",
@@ -58,6 +61,7 @@ const mapLegacyTag = (tag: string): string => {
     "web-search": "other",
     "human-computer-interaction": "other",
     "computer-graphics": "other",
+    // reinforcement-learning is already a proper tag, so no mapping needed
     // Add any other legacy mappings here
   };
   return legacyTagMapping[tag] || tag;
