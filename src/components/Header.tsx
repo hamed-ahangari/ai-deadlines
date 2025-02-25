@@ -59,7 +59,7 @@ const Header = ({ onSearch }: HeaderProps) => {
               pull request
             </a>.
             <br />
-            P.S. feel free to{' '}
+            P.S. Is your paper already on Arxiv? Feel free to{' '}
             <a
               href="https://hf.co/papers/submit"
               target="_blank"
@@ -68,7 +68,7 @@ const Header = ({ onSearch }: HeaderProps) => {
             >
               submit
             </a>
-            {' '}your paper to{' '}
+            {' '}it to{' '}
             <a
               href="https://hf.co/papers"
               target="_blank"
