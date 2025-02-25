@@ -610,3 +610,16 @@
   - natural-language-processing
   rankings: 'CCF: B, CORE: A*, THCPL: A'
   venue: Suzhou, China
+
+- title: CoNLL
+  year: 2025
+  id: conll25  # title as lower case + last two digits of year
+  full_name: The SIGNLL Conference on Computational Natural Language Learning  # full conference name
+  link: https://conll.org/
+  deadline: 2025-03-15 12:00
+  timezone: UTC-12
+  place: Vienna, Austria
+  date: July 31 - August 1, 2025
+  tags:
+  - natural-language-processing
+  
