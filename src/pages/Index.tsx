@@ -87,7 +87,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-neutral-light">
-      <Header onSearch={setSearchQuery} />
+      <Header 
+        onSearch={setSearchQuery} 
+        showEmptyMessage={selectedTags.size > 0 && filteredConferences.length === 0 && !showPastConferences}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 py-4">
           <FilterBar 

@@ -5,9 +5,10 @@ import { CalendarDays } from "lucide-react";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
+  showEmptyMessage?: boolean;
 }
 
-const Header = ({ onSearch }: HeaderProps) => {
+const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
   return (
     <header className="bg-white border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,6 +48,13 @@ const Header = ({ onSearch }: HeaderProps) => {
             </div>
           </div>
         </div>
+        {showEmptyMessage && (
+          <div className="max-w-4xl mx-auto mt-2 mb-0 text-center">
+            <p className="text-sm bg-amber-50 text-amber-800 py-2 px-4 rounded-md inline-block">
+              There are no upcoming conferences for the selected categories - enable "Show past conferences" to see previous ones
+            </p>
+          </div>
+        )}
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-neutral-600 py-4">
             Countdowns to top CV/NLP/ML/Robotics/AI conference deadlines. To add/edit a conference, send in a{' '}
