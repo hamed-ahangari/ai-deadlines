@@ -170,8 +170,19 @@ def main():
         # Create a dictionary of current conferences by ID
         current_conf_dict = {conf['id']: conf for conf in current_conferences}
         
+        # Create a set of existing conference title+year combinations to check for duplicates
+        existing_conf_keys = {(conf['title'], conf['year']) for conf in current_conferences}
+        
         # Update or add new conferences while preserving existing ones
         for new_conf in transformed_conferences:
+            # Check if this is a duplicate based on title and year
+            conf_key = (new_conf['title'], new_conf['year'])
+            
+            # Skip if we already have a conference with this title and year but different ID
+            if conf_key in existing_conf_keys and new_conf['id'] not in current_conf_dict:
+                print(f"Skipping duplicate conference: {new_conf['title']} {new_conf['year']} (ID: {new_conf['id']})")
+                continue
+                
             if new_conf['id'] in current_conf_dict:
                 # Update existing conference while preserving fields
                 curr_conf = current_conf_dict[new_conf['id']]
@@ -203,6 +214,8 @@ def main():
             else:
                 # Add new conference to the dictionary
                 current_conf_dict[new_conf['id']] = new_conf
+                # Add to our set of existing conference keys
+                existing_conf_keys.add(conf_key)
         
         # Convert back to list and sort by deadline
         all_conferences = list(current_conf_dict.values())
