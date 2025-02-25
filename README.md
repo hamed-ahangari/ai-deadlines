@@ -113,6 +113,10 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## License
+
+This project is licensed under [MIT](LICENSE).
+
 ## Maintainers
 
 Feel free to just open an issue. Otherwise contact @nielsrogge
