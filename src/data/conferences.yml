@@ -636,9 +636,12 @@
   link: https://www3.cs.stonybrook.edu/~icdm2025/index.html
   deadline: '2025-06-06 23:59:59'
   timezone: AoE
-  date: November 12 - November 15, 2025
   place: Washington DC, USA
-  tags: data-mining
+  date: November 12 - November 15, 2025
+  start: '2025-11-12'
+  end: '2025-11-15'
+  tags: 
+  - data-mining
 
 - title: EECV
   year: 2026
@@ -649,4 +652,5 @@
   timezone: UTC+0
   date: September 8 - September 13, 2026
   place: Malmö, Sweden
-  tags: computer-vision
+  tags: 
+  - computer-vision
