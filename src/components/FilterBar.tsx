@@ -1,13 +1,29 @@
 import { useMemo } from "react";
 import conferencesData from "@/data/conferences.yml";
-import { X } from "lucide-react";
+import { X, ChevronRight, Filter } from "lucide-react";
+import { getAllCountries } from "@/utils/countryExtractor";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Conference } from "@/types/conference";
 
 interface FilterBarProps {
   selectedTags: Set<string>;
+  selectedCountries: Set<string>;
   onTagSelect: (tags: Set<string>) => void;
+  onCountrySelect: (countries: Set<string>) => void;
 }
 
-const FilterBar = ({ selectedTags = new Set(), onTagSelect }: FilterBarProps) => {
+const FilterBar = ({ 
+  selectedTags = new Set(), 
+  selectedCountries = new Set(),
+  onTagSelect,
+  onCountrySelect
+}: FilterBarProps) => {
   const uniqueTags = useMemo(() => {
     const tags = new Set<string>();
     if (Array.isArray(conferencesData)) {
@@ -30,47 +46,86 @@ const FilterBar = ({ selectedTags = new Set(), onTagSelect }: FilterBarProps) =>
     return selectedTags?.has(tagId) ?? false;
   };
 
+  const handleTagChange = (tagId: string) => {
+    const newSelectedTags = new Set(selectedTags);
+    if (newSelectedTags.has(tagId)) {
+      newSelectedTags.delete(tagId);
+    } else {
+      newSelectedTags.add(tagId);
+    }
+    onTagSelect(newSelectedTags);
+  };
+
+  const clearAllFilters = () => {
+    onTagSelect(new Set());
+    onCountrySelect(new Set());
+  };
+
   return (
-    <div className="w-full py-6 bg-white border-b border-neutral-200 animate-fade-in shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap gap-3">
-          {uniqueTags.map((filter) => (
-            <button
-              key={filter.id}
-              title={filter.description}
-              onClick={() => {
-                const newTags = new Set(selectedTags);
-                if (isTagSelected(filter.id)) {
-                  newTags.delete(filter.id);
-                } else {
-                  newTags.add(filter.id);
-                }
-                onTagSelect(newTags);
-              }}
-              className={`
-                px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
-                filter-tag
-                ${isTagSelected(filter.id)
-                  ? "bg-primary text-white shadow-sm filter-tag-active" 
-                  : "bg-neutral-50 text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
-                }
-              `}
+    <div className="bg-white shadow rounded-lg p-4">
+      <div className="flex flex-col space-y-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="sm" className="h-8 gap-1">
+                <Filter className="h-4 w-4" />
+                Filter by Tag
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80 p-4" align="start">
+              <div className="space-y-4">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-medium text-gray-800">Tags</h4>
+                    <ChevronRight className="h-4 w-4 text-gray-500" />
+                  </div>
+                  <div className="max-h-60 overflow-y-auto space-y-2">
+                    {uniqueTags.map(tag => (
+                      <div key={tag.id} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                        <Checkbox 
+                          id={`tag-${tag.id}`}
+                          checked={isTagSelected(tag.id)}
+                          onCheckedChange={() => handleTagChange(tag.id)}
+                        />
+                        <label 
+                          htmlFor={`tag-${tag.id}`}
+                          className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                        >
+                          {tag.label}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+
+          {/* Clear all filters button */}
+          {(selectedTags.size > 0 || selectedCountries.size > 0) && (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={clearAllFilters}
+              className="text-neutral-500 hover:text-neutral-700"
             >
-              {filter.label}
+              Clear all
+            </Button>
+          )}
+          
+          {/* Display selected tags */}
+          {Array.from(selectedTags).map(tag => (
+            <button
+              key={tag}
+              className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+              onClick={() => handleTagChange(tag)}
+            >
+              {tag.split("-").map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+              ).join(" ")}
+              <X className="ml-1 h-3 w-3" />
             </button>
           ))}
-          
-          {selectedTags?.size > 0 && (
-            <button
-              onClick={() => onTagSelect(new Set())}
-              className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
-                bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700
-                flex items-center gap-2"
-            >
-              <X className="h-4 w-4" />
-              Deselect All
-            </button>
-          )}
         </div>
       </div>
     </div>

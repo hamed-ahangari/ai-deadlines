@@ -6,7 +6,8 @@
   deadline: '2025-03-03 23:59:59'
   abstract_deadline: '2025-02-26 23:59:59'
   timezone: UTC-12
-  place: Philadelphia, Pennsylvania, USA
+  city: Philadelphia
+  country: USA
   date: August 11-14, 2025
   start: 2025-08-11
   end: 2025-08-14
@@ -24,7 +25,8 @@
   deadline: '2025-04-30 23:59:00'
   abstract_deadline: '2025-04-23 23:59:00'
   timezone: UTC-12
-  place: Seoul, Korea
+  city: Seoul
+  country: South Korea
   date: Sep 27-30, 2025
   tags:
   - machine-learning
@@ -41,7 +43,8 @@
   link: https://2025.ieee-icra.org
   deadline: '2024-07-15 12:00:00'
   timezone: UTC-4
-  place: Atlanta (GA), USA
+  city: Atlanta
+  country: USA
   date: May 19-23, 2025
   tags:
   - machine-learning
@@ -58,7 +61,8 @@
   link: https://wacv2025.thecvf.com/
   deadline: '2024-07-15 23:59:59'
   timezone: UTC-7
-  place: Tucson, Arizona, USA
+  city: Tucson
+  country: USA
   date: February 28 - March 4, 2025
   tags:
   - machine-learning
@@ -74,7 +78,8 @@
   link: https://www.wsdm-conference.org/2025/
   deadline: '2024-08-14 23:59:00'
   timezone: UTC-12
-  place: Hannover, Germany
+  city: Hannover
+  country: Germany
   venue: Hannover Congress Center, Hannover, Germany
   date: March 10-14, 2025
   start: 2025-03-10
@@ -82,6 +87,8 @@
   tags:
   - web-search
   - data-mining
+  abstract_deadline: '2024-08-07 23:59:00'
+  rankings: 'CCF: B, CORE: A*, THCPL: B'
 
 - title: AAAI
   year: 2025
@@ -90,7 +97,8 @@
   link: https://aaai.org/conference/aaai/aaai-25/
   deadline: '2024-08-15 23:59:59'
   timezone: UTC-12
-  place: PHILADELPHIA, PENNSYLVANIA, USA
+  city: PHILADELPHIA
+  country: PENNSYLVANIA
   date: February 25 - March 4, 2025
   tags:
   - data-mining
@@ -110,7 +118,8 @@
   link: https://2025.ieeeicassp.org/
   deadline: '2024-09-09 23:59:59'
   timezone: UTC-12
-  place: Hyderabad, India
+  city: Hyderabad
+  country: India
   venue: Hyderabad International Convention Center, Hyderabad, India
   date: April 6-11, 2025
   start: 2025-04-06
@@ -126,7 +135,8 @@
   deadline: '2024-09-12 23:59:59'
   abstract_deadline: '2024-09-05 23:59:59'
   timezone: UTC-12
-  place: Yokohama, Japan
+  city: Yokohama
+  country: Japan
   venue: Pacifico Yokohama Conference Center, Yokohama, Japan
   date: April 26 - May 01, 2025
   start: 2025-04-26
@@ -143,7 +153,8 @@
   link: https://coling2025.org/
   deadline: '2024-09-16 23:59:59'
   timezone: UTC-12
-  place: Abu Dhabi, UAE
+  city: Abu Dhabi
+  country: UAE
   date: Jan 19 - Jan 24, 2025
   tags:
   - natural-language-processing
@@ -161,7 +172,8 @@
   link: https://algorithmiclearningtheory.org/alt2025/
   deadline: '2024-10-01 09:59:59'
   timezone: UTC+0
-  place: Milan, Italy
+  city: Milan
+  country: Italy
   date: February 24-27, 2025
   tags:
   - machine-learning
@@ -175,7 +187,7 @@
   link: https://iclr.cc/Conferences/2025
   deadline: '2024-10-01 23:59:59'
   timezone: UTC-12
-  place: Singapore
+  city: Singapore
   date: April 24-28, 2025
   tags:
   - machine-learning
@@ -195,7 +207,8 @@
   link: https://www.eg.org/wp/event/eurographics-2025/
   deadline: '2024-10-03 23:59:59'
   timezone: UTC+1
-  place: London, UK
+  city: London
+  country: UK
   date: May 12 - 16, 2025
   tags:
   - computer-graphics
@@ -209,7 +222,8 @@
   deadline: '2024-10-09 23:59:59'
   abstract_deadline: '2024-10-02 23:59:59'
   timezone: UTC-12
-  place: Lucca, Tuscany, Italy
+  city: Lucca
+  country: Tuscany
   venue: IMT School for Advanced Studies Lucca, Lucca, Italy
   date: April 6 - April 10, 2025
   start: '2025-04-06'
@@ -225,7 +239,8 @@
   link: https://aistats.org/aistats2025
   deadline: '2024-10-10 23:59:59'
   timezone: UTC-12
-  place: Mai Khao, Thailand
+  city: Mai Khao
+  country: Thailand
   date: May 3-5, 2025
   tags:
   - machine-learning
@@ -244,7 +259,8 @@
   link: https://2025.naacl.org/
   deadline: '2024-10-15 23:59:59'
   timezone: UTC-12
-  place: Albuquerque, New Mexico, USA
+  city: Albuquerque
+  country: New Mexico
   date: April 29-May 4, 2025
   tags:
   - natural-language-processing
@@ -259,7 +275,8 @@
   link: https://aamas2025.org/
   deadline: '2024-10-16 23:59:59'
   timezone: UTC-12
-  place: Detroit, Michigan, USA
+  city: Detroit
+  country: Michigan
   date: May 19-23, 2025
   tags:
   - machine-learning
@@ -277,7 +294,8 @@
   link: https://cvpr.thecvf.com/Conferences/2025/CallForPapers
   deadline: '2024-11-14 23:59:00'
   timezone: UTC-8
-  place: Nashville, Tennessee, USA
+  city: Nashville
+  country: Tennessee
   date: June 10-17, 2025
   tags:
   - computer-vision
@@ -297,7 +315,8 @@
   link: https://www.esann.org/
   deadline: '2024-11-20 00:00:00'
   timezone: UTC-8
-  place: Bruges, Belgium
+  city: Bruges
+  country: Belgium
   date: April 23 - April 25, 2025
   tags: []
   abstract_deadline: '2024-11-20 00:00:00'
@@ -310,7 +329,8 @@
   link: https://cpal.cc/
   deadline: '2024-11-25 23:59:59'
   timezone: AoE
-  place: California, USA
+  city: California
+  country: USA
   date: March 24-27, 2025
   tags:
   - machine-learning
@@ -323,7 +343,8 @@
   link: https://www.cec2025.org/
   deadline: '2025-01-15 23:59:59'
   timezone: UTC-12
-  place: Hangzhou, China
+  city: Hangzhou
+  country: China
   date: June 8-12, 2025
   tags:
   - machine-learning
@@ -336,7 +357,8 @@
   link: https://s2025.siggraph.org/
   deadline: '2025-01-16 23:59:59'
   timezone: UTC-8
-  place: Vancouver, Canada
+  city: Vancouver
+  country: Canada
   venue: Convention Centre, Vancouver, Canada
   date: August 10-14, 2025
   start: '2025-08-10'
@@ -351,7 +373,8 @@
   link: https://2025.ijcai.org/
   deadline: '2025-01-23 23:59:59'
   timezone: UTC-12
-  place: Montreal, Canada.
+  city: Montreal
+  country: Canada
   date: August 16-22, 2025
   tags:
   - machine-learning
@@ -365,7 +388,8 @@
   link: https://roboticsconference.org
   deadline: '2025-01-24 23:59:00'
   timezone: AoE
-  place: Los Angeles, California, USA
+  city: Los Angeles
+  country: USA
   date: June 21-25, 2025
   tags:
   - machine-learning
@@ -379,7 +403,9 @@
   link: https://icml.cc/Conferences/2025
   deadline: '2025-01-30 23:59:59'
   timezone: UTC-12
-  place: Vancouver Convention Center, Vancouver, Canada
+  city: Vancouver
+  country: Canada
+  venue: Vancouver Convention Center
   date: July 11-19, 2025
   tags:
   - machine-learning
@@ -395,7 +421,8 @@
   link: https://2025.ijcnn.org/
   deadline: '2025-02-05 23:59:59'
   timezone: UTC-12
-  place: Rome, Italy
+  city: Rome
+  country: Italy
   date: June 30 - July 5, 2025
   tags:
   - machine-learning
@@ -408,7 +435,8 @@
   link: https://learningtheory.org/colt2025/
   deadline: '2025-02-06 16:59:59'
   timezone: UTC-5
-  place: Lyon, France
+  city: Lyon
+  country: France
   date: June 30 - July 4, 2025
   tags:
   - machine-learning
@@ -421,7 +449,8 @@
   link: https://www.auai.org/uai2025/
   deadline: '2025-02-10 23:59:59'
   timezone: AoE
-  place: Rio de Janeiro, Brazil
+  city: Rio de Janeiro
+  country: Brazil
   date: July 21-25, 2025
   tags:
   - machine-learning
@@ -433,11 +462,12 @@
   full_name: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
   deadline: '2025-02-10 23:59:59'
   abstract_deadline: '2025-02-03 23:59:59'
+  timezone: AoE
+  city: Toronto
+  country: Canada
+  date: August 3 - August 7, 2025
   start: '2025-08-03'
   end: '2025-08-07'
-  timezone: AoE
-  place: Toronto, ON, Canada
-  date: August 3 - August 7, 2025
   tags:
   - data-mining
   - machine-learning
@@ -453,7 +483,8 @@
   link: https://2025.aclweb.org/
   deadline: '2025-02-15 23:59:59'
   timezone: UTC-12
-  place: Vienna, Austria
+  city: Vienna
+  country: Austria
   date: July 27 - August 1, 2025
   tags:
   - natural-language-processing
@@ -470,7 +501,8 @@
   deadline: 2025-02-20 23:59
   abstract_deadline: 2025-02-01 23:59
   timezone: Russia/Moscow
-  place: Sirius, Sochi, Russia
+  city: Sochi
+  country: Russia
   date: March, 24-28, 2025
   start: 2025-03-24
   end: 2025-03-28
@@ -490,8 +522,9 @@
   deadline: '2025-02-28 23:59:59'
   abstract_deadline: '2025-02-21 23:59:59'
   timezone: UTC-12
+  city: Edmonton
+  country: Canada
   date: August 5 - August 8, 2025
-  place: Edmonton, Canada
   tags:
   - machine-learning
   - reinforcement-learning
@@ -504,7 +537,8 @@
   link: http://www.iros25.org/
   deadline: '2025-03-01 23:59:59'
   timezone: UTC-8
-  place: Hangzhou, China
+  city: Hangzhou
+  country: China
   date: October 19-25, 2025
   tags:
   - robotics
@@ -517,7 +551,8 @@
   link: https://ksem2025.scimeeting.cn/
   deadline: '2025-03-04 23:59:59'
   timezone: UTC+0
-  place: Macao SAR, China
+  city: Macao
+  country: China
   date: August 4-6, 2025
   tags:
   - machine-learning
@@ -530,7 +565,8 @@
   link: https://www.icdar2025.com/home
   deadline: '2025-03-07 23:59:59'
   timezone: UTC+0
-  place: Wuhan, China
+  city: Wuhan
+  country: China
   date: September 17-21, 2025
   tags:
   - computer-vision
@@ -544,7 +580,8 @@
   link: https://iccv.thecvf.com/Conferences/2025
   deadline: '2025-03-08 09:59:59'
   timezone: UTC+0
-  place: Honolulu, Hawaii
+  city: Honolulu
+  country: USA
   date: October 19-25, 2025
   tags:
   - machine-learning
@@ -563,7 +600,8 @@
   deadline: 2025-03-15 23:59
   abstract_deadline: 2025-03-15 23:59
   timezone: UTC-12
-  place: Kaunas, Lithuania
+  city: Kaunas
+  country: Lithuania
   date: September, 9-12, 2025
   start: 2025-09-09
   end: 2025-09-12
@@ -580,7 +618,8 @@
   link: https://colmweb.org/cfp.html
   deadline: '2025-03-27 23:59:59'
   timezone: AoE
-  place: Palais des Congrès Montreal, Canada
+  city: Montreal
+  country: Canada
   date: October 7-9, 2025
   tags:
   - natural-language-processing
@@ -592,10 +631,11 @@
   year: 2025
   id: ecai25
   full_name: European Conference on Artificial Intelligence
-  link: https://ecai2025.org/deadlines/
-  deadline: '2025-05-06 23:59:59'
+  link: https://www.ecai2025.eu/
+  deadline: '2025-03-30 23:59:59'
   timezone: UTC-12
-  place: Bologna, Italy
+  city: Bologna
+  country: Italy
   date: October 25-30, 2025
   tags:
   - machine-learning
@@ -610,7 +650,8 @@
   link: https://neurips.cc/
   deadline: '2025-05-16 23:59:59'
   timezone: UTC-8
-  place: San Diego, USA
+  city: San Diego
+  country: USA
   venue: San Diego Convention Center, San Diego, USA
   date: December 9-15, 2025
   start: '2025-12-09'
@@ -625,7 +666,8 @@
   link: https://2025.emnlp.org/
   deadline: '2025-05-19 23:59:59'
   timezone: UTC-12
-  place: Suzhou, China
+  city: Suzhou
+  country: China
   date: November 5 - 9, 2025
   start: '2025-11-05'
   end: '2025-11-09'
@@ -641,7 +683,8 @@
   link: https://conll.org/
   deadline: 2025-03-15 12:00
   timezone: UTC-12
-  place: Vienna, Austria
+  city: Vienna
+  country: Austria
   date: July 31 - August 1, 2025
   start: '2025-07-31'
   end: '2025-08-01'
@@ -657,7 +700,8 @@
   link: https://www3.cs.stonybrook.edu/~icdm2025/index.html
   deadline: '2025-06-06 23:59:59'
   timezone: AoE
-  place: Washington DC, USA
+  city: Washington DC
+  country: USA
   date: November 12 - November 15, 2025
   start: '2025-11-12'
   end: '2025-11-15'
@@ -671,7 +715,8 @@
   link: https://eccv.ecva.net/Conferences/2026
   deadline: '2026-03-06 11:00:00'
   timezone: UTC+0
+  city: Malmö
+  country: Sweden
   date: September 8 - September 13, 2026
-  place: Malmö, Sweden
   tags: 
   - computer-vision
