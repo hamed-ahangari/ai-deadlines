@@ -105,7 +105,11 @@ const ConferenceCalendar = ({ conferences }: ConferenceCalendarProps) => {
         <ul className="mt-2 space-y-1">
           {getEventsForMonth(currentMonth).map((event, index) => (
             <li key={index} className="text-sm">
-              {event.title} ({format(event.startDate, 'MMM d')}-{format(event.endDate, 'MMM d')}) - {event.conference.place}
+              {event.title} ({format(event.startDate, 'MMM d')}-{format(event.endDate, 'MMM d')}) - {
+                event.conference.venue || 
+                [event.conference.city, event.conference.country].filter(Boolean).join(", ") ||
+                "Location TBD"
+              }
             </li>
           ))}
         </ul>
@@ -121,7 +125,11 @@ const ConferenceCalendar = ({ conferences }: ConferenceCalendarProps) => {
             <ul className="mt-2 space-y-1">
               {getEventsForDate(selectedDate).map((event, index) => (
                 <li key={index} className="text-sm">
-                  {event.title} - {event.conference.place}
+                  {event.title} - {
+                    event.conference.venue || 
+                    [event.conference.city, event.conference.country].filter(Boolean).join(", ") ||
+                    "Location TBD"
+                  }
                 </li>
               ))}
             </ul>
