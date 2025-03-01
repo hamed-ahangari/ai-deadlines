@@ -36,9 +36,9 @@ To keep things minimal, we mainly focus on top-tier conferences in AI.
 To add or update a deadline:
 - Fork the repository
 - Update [src/data/conferences.yml](src/data/conferences.yml)
-- Make sure it has the `title`, `year`, `id`, `link`, `deadline`, `timezone`, `date`, `place`, `tags` attributes
+- Make sure it has the `title`, `year`, `id`, `link`, `deadline`, `timezone`, `date`, `city`, `country`, `tags` attributes
     + See available timezone strings [here](https://momentjs.com/timezone/).
-- Optionally add a `note` and `abstract_deadline` in case the conference has a separate mandatory abstract deadline
+- Optionally add a `venue`, `note` and `abstract_deadline` in case this info is known
 - Optionally add `hindex` (refers to h5-index from [here](https://scholar.google.com/citations?view_op=top_venues&vq=eng))
 - Example:
     ```yaml
@@ -50,7 +50,9 @@ To add or update a deadline:
       deadline: YYYY-MM-DD HH:SS
       abstract_deadline: YYYY-MM-DD HH:SS
       timezone: Asia/Seoul
-      place: Incheon, South Korea
+      city: Incheon
+      country: South Korea
+      venue: Incheon Conference Centre, South Korea
       date: September, 18-22, 2022
       start: YYYY-MM-DD
       end: YYYY-MM-DD
