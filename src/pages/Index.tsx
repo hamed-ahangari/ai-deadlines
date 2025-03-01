@@ -10,7 +10,7 @@ import { extractCountry } from "@/utils/countryExtractor";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, ChevronRight, Filter } from "lucide-react";
+import { X, ChevronRight, Filter, Globe } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 
 const Index = () => {
@@ -177,16 +177,15 @@ const Index = () => {
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1">
-                    <Filter className="h-4 w-4" />
+                    <Globe className="h-4 w-4" />
                     Filter by Country
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-80 p-4 bg-white" align="start">
+                <PopoverContent className="w-64 p-4 bg-white" align="start">
                   <div className="space-y-4">
                     <div>
-                      <div className="flex items-center justify-between mb-4">
+                      <div className="mb-4">
                         <h4 className="text-sm font-medium text-gray-800">Country</h4>
-                        <ChevronRight className="h-4 w-4 text-gray-500" />
                       </div>
                       <div className="max-h-60 overflow-y-auto space-y-2 bg-white">
                         {getAllCountries(conferencesData as Conference[]).map(country => (

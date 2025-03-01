@@ -1,6 +1,6 @@
 import { CalendarDays, Globe, Tag, Clock, AlarmClock } from "lucide-react";
 import { Conference } from "@/types/conference";
-import { formatDistanceToNow, parseISO, isValid } from "date-fns";
+import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 
@@ -15,12 +15,21 @@ const ConferenceCard = ({
   link,
   note,
   abstract_deadline,
+  city,
+  country,
+  venue,
   ...conferenceProps
 }: Conference) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const deadlineDate = deadline && deadline !== 'TBD' ? parseISO(deadline) : null;
-  const daysLeft = deadlineDate && isValid(deadlineDate) ? formatDistanceToNow(deadlineDate, { addSuffix: true }) : 'TBD';
-  
+  const isPastDeadline = deadlineDate ? isPast(deadlineDate) : false;
+  const timeRemaining = deadlineDate && !isPastDeadline
+    ? formatDistanceToNow(deadlineDate, { addSuffix: true })
+    : null;
+
+  // Create location string by concatenating city and country
+  const location = [city, country].filter(Boolean).join(", ");
+
   // Determine countdown color based on days remaining
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
@@ -86,10 +95,12 @@ const ConferenceCard = ({
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">{date}</span>
           </div>
-          <div className="flex items-center text-neutral">
-            <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
-            <span className="text-sm truncate">{place}</span>
-          </div>
+          {location && (
+            <div className="flex items-center text-neutral">
+              <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
+              <span className="text-sm truncate">{location}</span>
+            </div>
+          )}
           <div className="flex items-center text-neutral">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
@@ -99,7 +110,7 @@ const ConferenceCard = ({
           <div className="flex items-center">
             <AlarmClock className={`h-4 w-4 mr-2 flex-shrink-0 ${getCountdownColor()}`} />
             <span className={`text-sm font-medium truncate ${getCountdownColor()}`}>
-              {daysLeft}
+              {timeRemaining}
             </span>
           </div>
         </div>
@@ -121,7 +132,22 @@ const ConferenceCard = ({
       </div>
 
       <ConferenceDialog
-        conference={{ title, full_name, date, place, deadline, timezone, tags, link, note, abstract_deadline, ...conferenceProps }}
+        conference={{
+          title,
+          full_name,
+          date,
+          place,
+          deadline,
+          timezone,
+          tags,
+          link,
+          note,
+          abstract_deadline,
+          city,
+          country,
+          venue,
+          ...conferenceProps
+        }}
         open={dialogOpen}
         onOpenChange={setDialogOpen}
       />

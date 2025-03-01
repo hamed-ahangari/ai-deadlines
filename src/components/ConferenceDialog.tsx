@@ -24,8 +24,31 @@ interface ConferenceDialogProps {
 }
 
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
+  console.log('Conference object:', conference);
   const deadlineDate = conference.deadline && conference.deadline !== 'TBD' ? parseISO(conference.deadline) : null;
   const [countdown, setCountdown] = useState<string>('');
+
+  // Replace the current location string creation with this more verbose version
+  const getLocationString = () => {
+    console.log('Venue:', conference.venue);
+    console.log('City:', conference.city);
+    console.log('Country:', conference.country);
+
+    if (conference.venue) {
+      return conference.venue;
+    }
+
+    const cityCountryArray = [conference.city, conference.country].filter(Boolean);
+    console.log('City/Country array after filter:', cityCountryArray);
+    
+    const cityCountryString = cityCountryArray.join(", ");
+    console.log('Final location string:', cityCountryString);
+
+    return cityCountryString || "Location TBD"; // Fallback if everything is empty
+  };
+
+  // Use the function result
+  const location = getLocationString();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -110,12 +133,12 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       const formatDateForApple = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
 
       const title = encodeURIComponent(`${conference.title} deadline`);
-      const location = encodeURIComponent(conference.place);
+      const locationStr = encodeURIComponent(location);
       const description = encodeURIComponent(
         `Paper Submission Deadline for ${conference.full_name || conference.title}\n` +
         (conference.abstract_deadline ? `Abstract Deadline: ${conference.abstract_deadline}\n` : '') +
         `Dates: ${conference.date}\n` +
-        `Location: ${conference.place}\n` +
+        `Location: ${location}\n` +
         (conference.link ? `Website: ${conference.link}` : '')
       );
 
@@ -124,7 +147,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
           `&text=${title}` +
           `&dates=${formatDateForGoogle(deadlineDate)}/${formatDateForGoogle(endDate)}` +
           `&details=${description}` +
-          `&location=${location}` +
+          `&location=${locationStr}` +
           `&sprop=website:${encodeURIComponent(conference.link || '')}`;
         window.open(url, '_blank');
       } else {
@@ -159,88 +182,89 @@ END:VCALENDAR`;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-xl">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{conference.title} {conference.year}</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-2xl font-bold text-blue-600">{conference.title}</DialogTitle>
+          <DialogDescription className="text-base text-gray-700">
             {conference.full_name}
           </DialogDescription>
         </DialogHeader>
-
-        <div className="space-y-4">
-          <div className="flex items-start gap-2">
-            <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
-            <div>
-              <p className="font-medium">Dates</p>
-              <p className="text-sm text-gray-500">{conference.date}</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-2">
-            <Clock className="h-5 w-5 mt-0.5 text-gray-500" />
-            <div className="space-y-2 flex-1">
-              <p className="font-medium">Important Deadlines</p>
-              <div className="text-sm text-gray-500 space-y-2">
-                {conference.abstract_deadline && (
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Abstract: {parseISO(conference.abstract_deadline) && isValid(parseISO(conference.abstract_deadline)) 
-                      ? format(parseISO(conference.abstract_deadline), "MMMM d, yyyy")
-                      : conference.abstract_deadline}
-                    </p>
-                  </div>
-                )}
-                <div className="bg-gray-100 rounded-md p-2">
-                  <p>Submission: {conference.deadline && conference.deadline !== 'TBD' && isValid(parseISO(conference.deadline))
-                    ? format(parseISO(conference.deadline), "MMMM d, yyyy")
-                    : conference.deadline}
-                  </p>
-                </div>
-                {conference.commitment_deadline && (
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Commitment: {isValid(parseISO(conference.commitment_deadline))
-                      ? format(parseISO(conference.commitment_deadline), "MMMM d, yyyy")
-                      : conference.commitment_deadline}
-                    </p>
-                  </div>
-                )}
-                {conference.review_release_date && (
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Reviews Released: {isValid(parseISO(conference.review_release_date))
-                      ? format(parseISO(conference.review_release_date), "MMMM d, yyyy")
-                      : conference.review_release_date}
-                    </p>
-                  </div>
-                )}
-                {(conference.rebuttal_period_start || conference.rebuttal_period_end) && (
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Rebuttal Period: {conference.rebuttal_period_start && isValid(parseISO(conference.rebuttal_period_start))
-                      ? format(parseISO(conference.rebuttal_period_start), "MMMM d, yyyy")
-                      : conference.rebuttal_period_start} - {conference.rebuttal_period_end && isValid(parseISO(conference.rebuttal_period_end))
-                      ? format(parseISO(conference.rebuttal_period_end), "MMMM d, yyyy")
-                      : conference.rebuttal_period_end}
-                    </p>
-                  </div>
-                )}
-                {conference.final_decision_date && (
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Final Decision: {isValid(parseISO(conference.final_decision_date))
-                      ? format(parseISO(conference.final_decision_date), "MMMM d, yyyy")
-                      : conference.final_decision_date}
-                    </p>
-                  </div>
-                )}
+        
+        <div className="space-y-6 mt-4">
+          <div className="space-y-4">
+            <div className="flex items-start gap-2">
+              <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
+              <div>
+                <p className="font-medium">Dates</p>
+                <p className="text-sm text-gray-500">{conference.date}</p>
               </div>
             </div>
-          </div>
 
-          <div className="flex items-start gap-2">
-            <Globe className="h-5 w-5 mt-0.5 text-gray-500" />
-            <div>
-              <p className="font-medium">Location</p>
-              <p className="text-sm text-gray-500">{conference.place}</p>
-              {conference.venue && (
-                <p className="text-sm text-gray-500">{conference.venue}</p>
-              )}
+            <div className="flex items-start gap-2">
+              <Globe className="h-5 w-5 mt-0.5 text-gray-500" />
+              <div>
+                <p className="font-medium">Location</p>
+                <p className="text-sm text-gray-500">
+                  {conference.venue || [conference.city, conference.country].filter(Boolean).join(", ")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <Clock className="h-5 w-5 mt-0.5 text-gray-500" />
+              <div className="space-y-2 flex-1">
+                <p className="font-medium">Important Deadlines</p>
+                <div className="text-sm text-gray-500 space-y-2">
+                  {conference.abstract_deadline && (
+                    <div className="bg-gray-100 rounded-md p-2">
+                      <p>Abstract: {parseISO(conference.abstract_deadline) && isValid(parseISO(conference.abstract_deadline)) 
+                        ? format(parseISO(conference.abstract_deadline), "MMMM d, yyyy")
+                        : conference.abstract_deadline}
+                      </p>
+                    </div>
+                  )}
+                  <div className="bg-gray-100 rounded-md p-2">
+                    <p>Submission: {conference.deadline && conference.deadline !== 'TBD' && isValid(parseISO(conference.deadline))
+                      ? format(parseISO(conference.deadline), "MMMM d, yyyy")
+                      : conference.deadline}
+                    </p>
+                  </div>
+                  {conference.commitment_deadline && (
+                    <div className="bg-gray-100 rounded-md p-2">
+                      <p>Commitment: {isValid(parseISO(conference.commitment_deadline))
+                        ? format(parseISO(conference.commitment_deadline), "MMMM d, yyyy")
+                        : conference.commitment_deadline}
+                      </p>
+                    </div>
+                  )}
+                  {conference.review_release_date && (
+                    <div className="bg-gray-100 rounded-md p-2">
+                      <p>Reviews Released: {isValid(parseISO(conference.review_release_date))
+                        ? format(parseISO(conference.review_release_date), "MMMM d, yyyy")
+                        : conference.review_release_date}
+                      </p>
+                    </div>
+                  )}
+                  {(conference.rebuttal_period_start || conference.rebuttal_period_end) && (
+                    <div className="bg-gray-100 rounded-md p-2">
+                      <p>Rebuttal Period: {conference.rebuttal_period_start && isValid(parseISO(conference.rebuttal_period_start))
+                        ? format(parseISO(conference.rebuttal_period_start), "MMMM d, yyyy")
+                        : conference.rebuttal_period_start} - {conference.rebuttal_period_end && isValid(parseISO(conference.rebuttal_period_end))
+                        ? format(parseISO(conference.rebuttal_period_end), "MMMM d, yyyy")
+                        : conference.rebuttal_period_end}
+                      </p>
+                    </div>
+                  )}
+                  {conference.final_decision_date && (
+                    <div className="bg-gray-100 rounded-md p-2">
+                      <p>Final Decision: {isValid(parseISO(conference.final_decision_date))
+                        ? format(parseISO(conference.final_decision_date), "MMMM d, yyyy")
+                        : conference.final_decision_date}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
 
