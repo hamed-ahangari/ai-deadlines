@@ -184,7 +184,9 @@ END:VCALENDAR`;
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-blue-600">{conference.title}</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-blue-600">
+            {conference.title} {conference.year}
+          </DialogTitle>
           <DialogDescription className="text-base text-gray-700">
             {conference.full_name}
           </DialogDescription>

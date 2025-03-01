@@ -7,6 +7,7 @@ import { useState } from "react";
 const ConferenceCard = ({
   title,
   full_name,
+  year,
   date,
   deadline,
   timezone,
@@ -75,7 +76,9 @@ const ConferenceCard = ({
         onClick={handleCardClick}
       >
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold text-primary">{title}</h3>
+          <h3 className="text-lg font-semibold text-primary">
+            {title} {year}
+          </h3>
           {link && (
             <a 
               href={link}
@@ -134,6 +137,7 @@ const ConferenceCard = ({
         conference={{
           title,
           full_name,
+          year,
           date,
           deadline,
           timezone,
