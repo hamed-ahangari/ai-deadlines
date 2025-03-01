@@ -5,6 +5,7 @@ colorFrom: gray
 colorTo: blue
 sdk: docker
 pinned: false
+app_port: 8080
 ---
 
 # AI Conference Deadlines
@@ -100,10 +101,10 @@ docker build -t ai-deadlines .
 Next it can be run as follows:
 
 ```bash
-docker run -it -p 7860:7860 ai-deadlines
+docker run -it -p 8080:8080 ai-deadlines
 ```
 
-You can see it in your web browser at http://localhost:7860/.
+You can see it in your web browser at http://localhost:8080/.
 
 ## Technologies used
 
@@ -114,6 +115,16 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Deploy on the cloud
+
+One way to deploy this on a cloud is by using [Artifact Registry](https://cloud.google.com/artifact-registry/docs) (for hosting the Docker image) and [Cloud Run](https://cloud.google.com/run?hl=en) (a serverless service by Google to run Docker containers). Make sure to have the [gcloud SDK installed](https://cloud.google.com/sdk/docs/install). To deploy, simply run:
+
+```bash
+gcloud auth login
+gcloud auth application-default login
+gcloud run deploy --source .
+```
 
 ## License
 

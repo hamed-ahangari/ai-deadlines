@@ -19,8 +19,8 @@ RUN npm run build
 # Install serve
 RUN npm install -g serve
 
-# Expose port 7860 (default for Hugging Face Spaces)
-EXPOSE 7860
+# Expose port 8080
+EXPOSE 8080
 
 # Start server
-CMD ["serve", "-s", "dist", "-l", "7860"] 
+CMD ["serve", "-s", "dist", "-l", "8080"] 

@@ -12,8 +12,8 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
   return (
     <header className="bg-white border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between md:h-16 py-4 md:py-0 gap-4 md:gap-0">
+          <div className="flex items-center justify-center md:justify-start w-full md:w-auto gap-8">
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="https://huggingface.co/front/assets/huggingface_logo.svg" 
@@ -21,7 +21,8 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
                 className="h-8 w-8"
               />
               <span className="text-2xl font-bold text-primary">
-                AI Conference Deadlines
+                <span className="hidden md:inline">AI Conference Deadlines</span>
+                <span className="md:hidden">AI Deadlines</span>
               </span>
             </Link>
             <nav className="hidden md:flex space-x-4">
@@ -34,7 +35,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
               </Link>
             </nav>
           </div>
-          <div className="max-w-lg w-full lg:max-w-xs">
+          <div className="w-full md:max-w-lg lg:max-w-xs">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-neutral-400" />
@@ -42,7 +43,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
               <Input
                 type="search"
                 placeholder="Search conferences..."
-                className="pl-10"
+                className="pl-10 w-full"
                 onChange={(e) => onSearch(e.target.value)}
               />
             </div>
