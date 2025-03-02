@@ -305,7 +305,12 @@ END:VCALENDAR`;
           {conference.note && (
             <div 
               className="text-sm text-neutral-600 mt-2 p-3 bg-neutral-50 rounded-lg"
-              dangerouslySetInnerHTML={{ __html: conference.note }}
+              dangerouslySetInnerHTML={{ 
+                __html: conference.note.replace(
+                  /<a(.*?)>/g, 
+                  '<a$1 style="color: #3b82f6; font-weight: 500; text-decoration: underline; text-underline-offset: 2px;">'
+                ) 
+              }}
             />
           )}
 
