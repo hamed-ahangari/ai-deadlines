@@ -3,124 +3,68 @@ import { zonedTimeToUtc, utcToZonedTime } from 'date-fns-tz';
 
 export const getDeadlineInLocalTime = (deadline: string | undefined, timezone: string | undefined): Date | null => {
   if (!deadline || deadline === 'TBD') {
-    console.log('Early return - deadline is null or TBD:', { deadline, timezone });
     return null;
   }
   
   try {
-    console.log('Processing conference deadline:', {
-      conferenceName: 'Unknown', // We could pass this as a parameter if helpful
-      deadline,
-      timezone,
-      deadlineType: typeof deadline,
-      timezoneType: typeof timezone
-    });
-
     // Parse the deadline string to a Date object
-    const deadlineDate = parseISO(deadline);
-    console.log('Parsed deadline date:', {
-      original: deadline,
-      parsed: deadlineDate,
-      isValid: isValid(deadlineDate),
-      timestamp: deadlineDate.getTime(),
-      toISOString: deadlineDate.toISOString()
-    });
-
-    if (!isValid(deadlineDate)) {
+    const parsedDate = parseISO(deadline);
+    
+    if (!isValid(parsedDate)) {
       console.error('Invalid date parsed from deadline:', deadline);
       return null;
     }
     
-    // Handle AoE (Anywhere on Earth) timezone
-    if (timezone === 'AoE') {
-      console.log('Converting AoE to UTC-12');
-      return new Date(deadlineDate.getTime() - 12 * 60 * 60 * 1000);
-    }
-    
-    // Handle UTC offset timezones (e.g., "UTC-12", "UTC+01", "UTC+0")
+    // Handle timezone normalization
     const normalizeTimezone = (tz: string | undefined): string => {
-      if (!tz) {
-        console.log('No timezone provided, using UTC');
-        return 'UTC';
-      }
+      if (!tz) return 'UTC';
       
-      console.log('Normalizing timezone:', tz);
+      // Handle AoE (Anywhere on Earth) timezone
+      if (tz === 'AoE') return '-12:00';
       
       // If it's already an IANA timezone, return as is
-      if (!tz.toUpperCase().startsWith('UTC')) {
-        console.log('Using IANA timezone:', tz);
-        return tz;
-      }
+      if (!tz.toUpperCase().startsWith('UTC')) return tz;
       
       // Convert UTC±XX to proper format
       const match = tz.match(/^UTC([+-])(\d+)$/);
       if (match) {
         const [, sign, hours] = match;
         const paddedHours = hours.padStart(2, '0');
-        const normalized = `${sign}${paddedHours}:00`;
-        console.log('Normalized UTC offset:', { original: tz, normalized });
-        return normalized;
+        return `${sign}${paddedHours}:00`;
       }
       
       // Handle special case of UTC+0/UTC-0
       if (tz === 'UTC+0' || tz === 'UTC-0' || tz === 'UTC+00' || tz === 'UTC-00') {
-        console.log('Handling UTC+0/-0 case:', tz);
         return 'UTC';
       }
       
-      console.log('Falling back to UTC for timezone:', tz);
       return 'UTC';
     };
 
     const normalizedTimezone = normalizeTimezone(timezone);
-    console.log('Using timezone:', { original: timezone, normalized: normalizedTimezone });
-
+    
     try {
-      // Create date in the conference's timezone
-      const dateInConfTimezone = utcToZonedTime(deadlineDate, normalizedTimezone);
-      console.log('Conference timezone date:', {
-        date: dateInConfTimezone,
-        isValid: isValid(dateInConfTimezone),
-        timezone: normalizedTimezone
-      });
-
       // Get user's local timezone
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       
-      // Convert to user's local timezone
-      const localDate = utcToZonedTime(dateInConfTimezone, userTimezone);
-      console.log('Local timezone date:', {
-        date: localDate,
-        isValid: isValid(localDate),
-        timezone: userTimezone
-      });
+      // We need to:
+      // 1. Treat the parsed date as being in the conference's timezone
+      // 2. Convert it to UTC
+      // 3. Then convert to the user's local timezone
       
-      if (!isValid(localDate)) {
-        console.error('Invalid date after timezone conversion:', {
-          original: deadline,
-          timezone,
-          normalizedTimezone,
-          localDate
-        });
-        return null;
-      }
+      // Convert from conference timezone to UTC
+      const utcDate = zonedTimeToUtc(parsedDate, normalizedTimezone);
       
-      return localDate;
-    } catch (tzError) {
-      console.error('Timezone conversion error:', {
-        error: tzError,
-        deadline,
-        timezone,
-        normalizedTimezone
-      });
-      return deadlineDate;
+      // Convert from UTC to user's local timezone
+      const localDate = utcToZonedTime(utcDate, userTimezone);
+      
+      return isValid(localDate) ? localDate : null;
+    } catch (error) {
+      console.error('Timezone conversion error:', error);
+      return parsedDate; // Fall back to the parsed date if conversion fails
     }
   } catch (error) {
-    console.error('Error parsing deadline:', {
-      error,
-      deadline,
-      timezone
-    });
+    console.error('Error processing deadline:', error);
     return null;
   }
 }; 
