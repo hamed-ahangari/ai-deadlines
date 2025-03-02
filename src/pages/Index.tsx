@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X, ChevronRight, Filter, Globe } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
+import { getDeadlineInLocalTime } from "@/utils/dateUtils";
+import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
@@ -64,9 +66,19 @@ const Index = () => {
         return matchesTags && matchesCountry && matchesSearch;
       })
       .sort((a: Conference, b: Conference) => {
-        const dateA = a.deadline && a.deadline !== 'TBD' ? parseISO(a.deadline).getTime() : Infinity;
-        const dateB = b.deadline && b.deadline !== 'TBD' ? parseISO(b.deadline).getTime() : Infinity;
-        return dateA - dateB;
+        const aDeadline = getDeadlineInLocalTime(a.deadline, a.timezone);
+        const bDeadline = getDeadlineInLocalTime(b.deadline, b.timezone);
+        
+        if (aDeadline && bDeadline) {
+          return aDeadline.getTime() - bDeadline.getTime();
+        }
+        
+        // Handle cases where one or both deadlines are invalid
+        if (!aDeadline && !bDeadline) return 0;
+        if (!aDeadline) return 1;
+        if (!bDeadline) return -1;
+        
+        return 0;
       });
   }, [selectedTags, selectedCountries, searchQuery, showPastConferences]);
 
