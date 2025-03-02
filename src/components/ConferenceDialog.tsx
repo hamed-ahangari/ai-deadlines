@@ -192,6 +192,23 @@ END:VCALENDAR`;
     );
   };
 
+  // Add these new functions to handle consistent date conversion
+  const getLocalDeadline = (dateString: string | undefined) => {
+    if (!dateString || dateString === 'TBD') return null;
+    return getDeadlineInLocalTime(dateString, conference.timezone);
+  };
+
+  // Format any deadline date consistently
+  const formatDeadlineDate = (dateString: string | undefined) => {
+    if (!dateString || dateString === 'TBD') return dateString || 'TBD';
+    
+    const localDate = getLocalDeadline(dateString);
+    if (!localDate || !isValid(localDate)) return dateString;
+    
+    const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return `${format(localDate, "MMMM d, yyyy")} (${localTZ})`;
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
@@ -233,50 +250,30 @@ END:VCALENDAR`;
                 <div className="text-sm text-gray-500 space-y-2">
                   {conference.abstract_deadline && (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Abstract: {parseISO(conference.abstract_deadline) && isValid(parseISO(conference.abstract_deadline)) 
-                        ? format(parseISO(conference.abstract_deadline), "MMMM d, yyyy")
-                        : conference.abstract_deadline}
-                      </p>
+                      <p>Abstract: {formatDeadlineDate(conference.abstract_deadline)}</p>
                     </div>
                   )}
                   <div className="bg-gray-100 rounded-md p-2">
-                    <p>Submission: {conference.deadline && conference.deadline !== 'TBD' && isValid(parseISO(conference.deadline))
-                      ? format(parseISO(conference.deadline), "MMMM d, yyyy")
-                      : conference.deadline}
-                    </p>
+                    <p>Submission: {formatDeadlineDate(conference.deadline)}</p>
                   </div>
                   {conference.commitment_deadline && (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Commitment: {isValid(parseISO(conference.commitment_deadline))
-                        ? format(parseISO(conference.commitment_deadline), "MMMM d, yyyy")
-                        : conference.commitment_deadline}
-                      </p>
+                      <p>Commitment: {formatDeadlineDate(conference.commitment_deadline)}</p>
                     </div>
                   )}
                   {conference.review_release_date && (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Reviews Released: {isValid(parseISO(conference.review_release_date))
-                        ? format(parseISO(conference.review_release_date), "MMMM d, yyyy")
-                        : conference.review_release_date}
-                      </p>
+                      <p>Reviews Released: {formatDeadlineDate(conference.review_release_date)}</p>
                     </div>
                   )}
                   {(conference.rebuttal_period_start || conference.rebuttal_period_end) && (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Rebuttal Period: {conference.rebuttal_period_start && isValid(parseISO(conference.rebuttal_period_start))
-                        ? format(parseISO(conference.rebuttal_period_start), "MMMM d, yyyy")
-                        : conference.rebuttal_period_start} - {conference.rebuttal_period_end && isValid(parseISO(conference.rebuttal_period_end))
-                        ? format(parseISO(conference.rebuttal_period_end), "MMMM d, yyyy")
-                        : conference.rebuttal_period_end}
-                      </p>
+                      <p>Rebuttal Period: {formatDeadlineDate(conference.rebuttal_period_start)} - {formatDeadlineDate(conference.rebuttal_period_end)}</p>
                     </div>
                   )}
                   {conference.final_decision_date && (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Final Decision: {isValid(parseISO(conference.final_decision_date))
-                        ? format(parseISO(conference.final_decision_date), "MMMM d, yyyy")
-                        : conference.final_decision_date}
-                      </p>
+                      <p>Final Decision: {formatDeadlineDate(conference.final_decision_date)}</p>
                     </div>
                   )}
                 </div>
