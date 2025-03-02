@@ -108,7 +108,7 @@ You can see it in your web browser at http://localhost:8080/.
 
 ## Deploy on the cloud
 
-One way to deploy this on a cloud is by using [Artifact Registry](https://cloud.google.com/artifact-registry/docs) (for hosting the Docker image) and [Cloud Run](https://cloud.google.com/run?hl=en) (a serverless service by Google to run Docker containers). 
+One way to deploy this on a cloud is by using [Artifact Registry](https://cloud.google.com/artifact-registry/docs) (for hosting the Docker image) and [Cloud Run](https://cloud.google.com/run?hl=en) (a serverless service by Google to run Docker containers). See [this YouTube video](https://youtu.be/cw34KMPSt4k?si=UbzNRobNzib93uDl) for a nice intro.
 
 Make sure to:
 - create a [Google Cloud project](https://console.cloud.google.com/)

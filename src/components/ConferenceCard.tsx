@@ -3,6 +3,7 @@ import { Conference } from "@/types/conference";
 import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
+import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 
 const ConferenceCard = ({
   title,
@@ -21,11 +22,27 @@ const ConferenceCard = ({
   ...conferenceProps
 }: Conference) => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const deadlineDate = deadline && deadline !== 'TBD' ? parseISO(deadline) : null;
-  const isPastDeadline = deadlineDate ? isPast(deadlineDate) : false;
-  const timeRemaining = deadlineDate && !isPastDeadline
-    ? formatDistanceToNow(deadlineDate, { addSuffix: true })
-    : null;
+  const deadlineDate = getDeadlineInLocalTime(deadline, timezone);
+  
+  // Add validation before using formatDistanceToNow
+  const getTimeRemaining = () => {
+    if (!deadlineDate || !isValid(deadlineDate)) {
+      return 'TBD';
+    }
+    
+    if (isPast(deadlineDate)) {
+      return 'Deadline passed';
+    }
+    
+    try {
+      return formatDistanceToNow(deadlineDate, { addSuffix: true });
+    } catch (error) {
+      console.error('Error formatting time remaining:', error);
+      return 'Invalid date';
+    }
+  };
+
+  const timeRemaining = getTimeRemaining();
 
   // Create location string by concatenating city and country
   const location = [city, country].filter(Boolean).join(", ");
@@ -33,10 +50,15 @@ const ConferenceCard = ({
   // Determine countdown color based on days remaining
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
-    const daysRemaining = Math.ceil((deadlineDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
-    if (daysRemaining <= 7) return "text-red-600";
-    if (daysRemaining <= 30) return "text-orange-600";
-    return "text-green-600";
+    try {
+      const daysRemaining = Math.ceil((deadlineDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+      if (daysRemaining <= 7) return "text-red-600";
+      if (daysRemaining <= 30) return "text-orange-600";
+      return "text-green-600";
+    } catch (error) {
+      console.error('Error calculating countdown color:', error);
+      return "text-neutral-600";
+    }
   };
 
   const handleCardClick = (e: React.MouseEvent) => {

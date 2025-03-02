@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
+import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -25,7 +26,7 @@ interface ConferenceDialogProps {
 
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
   console.log('Conference object:', conference);
-  const deadlineDate = conference.deadline && conference.deadline !== 'TBD' ? parseISO(conference.deadline) : null;
+  const deadlineDate = getDeadlineInLocalTime(conference.deadline, conference.timezone);
   const [countdown, setCountdown] = useState<string>('');
 
   // Replace the current location string creation with this more verbose version
@@ -57,8 +58,8 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
         return;
       }
 
-      const now = new Date().getTime();
-      const difference = deadlineDate.getTime() - now;
+      const now = new Date();
+      const difference = deadlineDate.getTime() - now.getTime();
 
       if (difference <= 0) {
         setCountdown('Deadline passed');
@@ -73,13 +74,8 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
     };
 
-    // Calculate immediately
     calculateTimeLeft();
-
-    // Update every second
     const timer = setInterval(calculateTimeLeft, 1000);
-
-    // Cleanup interval on component unmount
     return () => clearInterval(timer);
   }, [deadlineDate]);
 
@@ -180,6 +176,22 @@ END:VCALENDAR`;
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue || place)}`;
   };
 
+  const formatDeadlineDisplay = () => {
+    if (!deadlineDate || !isValid(deadlineDate)) return null;
+    
+    const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return (
+      <div className="text-sm text-neutral-500">
+        <div>{format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} ({localTZ})</div>
+        {conference.timezone && conference.timezone !== localTZ && (
+          <div className="text-xs">
+            Conference timezone: {conference.timezone}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
@@ -278,11 +290,7 @@ END:VCALENDAR`;
               <span className={`font-medium ${getCountdownColor()}`}>
                 {countdown}
               </span>
-              {deadlineDate && isValid(deadlineDate) && (
-                <div className="text-sm text-neutral-500">
-                  {format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} {conference.timezone}
-                </div>
-              )}
+              {formatDeadlineDisplay()}
             </div>
           </div>
 
