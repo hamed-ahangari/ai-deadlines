@@ -634,7 +634,7 @@
   id: ecai25
   full_name: European Conference on Artificial Intelligence
   link: https://www.ecai2025.eu/
-  deadline: '2025-03-30 23:59:59'
+  deadline: '2025-05-06 23:59:59'
   timezone: UTC-12
   city: Bologna
   country: Italy
@@ -642,8 +642,12 @@
   tags:
   - machine-learning
   abstract_deadline: '2025-04-29 23:59:59'
+  rebuttal_period_start: '2025-06-23'
+  rebuttal_period_end: '2025-06-25'
+  final_decision_date: '2025-07-10'
   rankings: 'CCF: B, CORE: A, THCPL: N'
   venue: Bologna Congress Center and The Engineering School (University of Bologna)
+  note: All important dates can be found <a href='https://ecai2025.org/call-for-papers/'>here</a>.
 
 - title: NeurIPS
   year: 2025
@@ -710,7 +714,7 @@
   tags: 
   - data-mining
 
-- title: EECV
+- title: ECCV
   year: 2026
   id: eecv26
   full_name: European Conference on Computer Vision
