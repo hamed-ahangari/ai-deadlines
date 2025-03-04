@@ -521,6 +521,7 @@
   link: https://rl-conference.cc/
   deadline: '2025-02-28 23:59:59'
   abstract_deadline: '2025-02-21 23:59:59'
+  final_decision_date: '2025-05-09'
   timezone: UTC-12
   city: Edmonton
   country: Canada
@@ -726,3 +727,46 @@
   date: September 8 - September 13, 2026
   tags: 
   - computer-vision
+
+- title: ACM
+  year: 2025
+  id: acm25
+  full_name: ACM Multimedia
+  link: https://acmccsc.org/
+  deadline: '2025-04-11 23:59:59'
+  abstract_deadline: '2025-04-04 23:59:59'
+  rebuttal_period_start: '2025-06-22'
+  rebuttal_period_end: '2025-06-09'
+  final_decision_date: '2025-07-04'
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  date: October 27-31, 2025
+  start: '2025-10-27'
+  end: '2025-10-31'
+  venue: Dublin Royal Convention Center, Dublin, Ireland
+  note: All important dates can be found <a href='https://acmmm2025.org/important-dates/'>here</a>.
+  tags:
+  - computer-vision
+  - machine-learning
+  - human-computer-interaction
+
+- title: SGP
+  year: 2025
+  id: sgp25
+  full_name: Synopsium on Geometric Processing
+  link: https://sgp2025.my.canva.site/
+  deadline: '2025-02-07 23:59:59'
+  abstract_deadline: '2025-02-04 23:59:59'
+  final_decision_date: '2025-03-15'
+  timezone: UTC-12
+  city: Bilbao
+  country: Spain
+  date: June 30-July 4, 2025
+  start: '2025-06-30'
+  end: '2025-07-04'
+  venue: Bizkaia Aretoa, Bilbao, Spain
+  note: All important dates can be found <a href='https://sgp2025.my.canva.site/submit-page-sgp'>here</a>.
+  tags:
+  - computer-vision
+  - machine-learning
