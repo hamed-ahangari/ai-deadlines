@@ -728,11 +728,11 @@
   tags: 
   - computer-vision
 
-- title: ACM
+- title: ACM MM
   year: 2025
   id: acm25
   full_name: ACM Multimedia
-  link: https://acmccsc.org/
+  link: https://acmmm2025.org/
   deadline: '2025-04-11 23:59:59'
   abstract_deadline: '2025-04-04 23:59:59'
   rebuttal_period_start: '2025-06-22'
