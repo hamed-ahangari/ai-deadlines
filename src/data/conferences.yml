@@ -600,8 +600,8 @@
   id: icann25
   full_name: International Conference on Artificial Neural Networks
   link: https://e-nns.org/icann2025/
-  deadline: 2025-03-15 23:59
-  abstract_deadline: 2025-03-15 23:59
+  deadline: 2025-03-29 23:59
+  abstract_deadline: 2025-03-29 23:59
   timezone: UTC-12
   city: Kaunas
   country: Lithuania
@@ -612,7 +612,7 @@
   hindex: 32.0
   tags:
   - machine-learning
-  note: Deadline for full paper submission at 15 March 2025. More info <a href='https://e-nns.org/icann2025'>here</a>.
+  note: Deadline for full paper submission extended to 29 th March 2025. More info <a href='https://e-nns.org/icann2025'>here</a>.
 
 - title: COLM
   year: 2025
