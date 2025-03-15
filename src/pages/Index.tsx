@@ -199,7 +199,10 @@ const Index = () => {
                       <div className="mb-4">
                         <h4 className="text-sm font-medium text-gray-800">Country</h4>
                       </div>
-                      <div className="max-h-60 overflow-y-auto space-y-2 bg-white">
+                      <div 
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                      >
                         {getAllCountries(conferencesData as Conference[]).map(country => (
                           <div key={country} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
                             <Checkbox 
