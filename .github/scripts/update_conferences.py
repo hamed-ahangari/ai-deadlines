@@ -114,10 +114,21 @@ def transform_conference_data(conferences: List[Dict[str, Any]]) -> List[Dict[st
             'link': recent_conf.get('link', ''),
             'deadline': recent_conf.get('timeline', [{}])[0].get('deadline', ''),
             'timezone': recent_conf.get('timezone', ''),
-            'place': recent_conf.get('place', ''),
             'date': recent_conf.get('date', ''),
             'tags': [],  # We'll need to maintain a mapping for tags
         }
+        
+        # Handle city and country fields instead of place
+        place = recent_conf.get('place', '')
+        if place:
+            # Try to parse the place into city and country if it contains a comma
+            if ',' in place:
+                city, country = place.split(',', 1)
+                transformed_conf['city'] = city.strip()
+                transformed_conf['country'] = country.strip()
+            else:
+                # If we can't parse, just set the country
+                transformed_conf['country'] = place.strip()
         
         # Add optional fields
         timeline = recent_conf.get('timeline', [{}])[0]
@@ -193,7 +204,7 @@ def main():
                     'timezone_submission', 'rebuttal_period_start',
                     'rebuttal_period_end', 'final_decision_date',
                     'review_release_date', 'commitment_deadline',
-                    'start', 'end', 'note'  # Added note to preserved fields
+                    'start', 'end', 'note', 'city', 'country'  # Added city and country to preserved fields
                 ]
                 for field in preserved_fields:
                     if field in curr_conf:
