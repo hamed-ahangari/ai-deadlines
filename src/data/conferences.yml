@@ -820,3 +820,23 @@
   tags:
   - machine-learning
   - optimization
+
+- title: AAAI
+  year: 2026
+  id: aaai26
+  full_name: AAAI Conference on Artificial Intelligence
+  link: https://aaai.org/conference/aaai/aaai-26/
+  deadline: '2025-08-01 23:59:59'
+  abstract_deadline: '2025-07-25 23:59:59'
+  timezone: UTC-12
+  date: January 20 – January 27, 2026
+  tags:
+  - data-mining
+  - machine-learning
+  - natural-language-processing
+  - computer-vision
+  country: Singapore
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  venue: Singapore EXPO, Singapore
+  hindex: 220
+  note: Mandatory abstract deadline on Jul 25, 2025, and supplementary material deadline on Aug 04, 2025. More info <a href='https://aaai.org/conference/aaai/aaai-26/'>here</a>.
