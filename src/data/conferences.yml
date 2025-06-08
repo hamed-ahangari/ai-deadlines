@@ -840,3 +840,23 @@
   venue: Singapore EXPO, Singapore
   hindex: 220
   note: Mandatory abstract deadline on Jul 25, 2025, and supplementary material deadline on Aug 04, 2025. More info <a href='https://aaai.org/conference/aaai/aaai-26/'>here</a>.
+
+- title: CHI
+  year: 2026
+  id: chi26
+  full_name: The ACM Conference on Human Factors in Computing Systems
+  link: https://chi2026.acm.org/
+  deadline: '2025-09-11 23:59:59'
+  abstract_deadline: '2025-09-04 23:59:59'
+  timezone: UTC-12
+  city: Barcelona
+  country: Spain
+  venue: Centre de Convencions Internacional de Barcelona, Barcelona, Spain
+  date: April 13 - April 17, 2026
+  start: 2026-04-13
+  end: 2026-04-17
+  hindex: 128
+  tags:
+  - human-computer-interaction
+  note: Mandatory abstract deadline on Sep 04, 2025. More info <a href='https://chi2026.acm.org/authors/papers/'>here</a>.
+
