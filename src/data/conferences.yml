@@ -1,3 +1,24 @@
+- title: WWW
+  year: 2026
+  id: www26
+  full_name: The Web Conference
+  link: https://www2026.thewebconf.org/
+  deadline: '2025-10-07 23:59:59'
+  abstract_deadline: '2025-09-30 23:59:59'
+  timezone: UTC-12
+  city: Dubai
+  country: UAE
+  date: April, 13-17, 2026
+  start: 2026-04-13
+  end: 2026-04-17
+  tags:
+  - machine learning
+  - recommendation
+  - semantics and knowledge
+  - retrieval
+  - web mining
+  - content analysis
+
 - title: AISTATS
   year: 2026
   id: aistats26
