@@ -22,13 +22,21 @@ export const getDeadlineInLocalTime = (deadline: string | undefined, timezone: s
       // Handle AoE (Anywhere on Earth) timezone
       if (tz === 'AoE') return '-12:00';
       
+      // Handle GMT±XX format
+      const gmtMatch = tz.match(/^GMT([+-])(\d+)$/);
+      if (gmtMatch) {
+        const [, sign, hours] = gmtMatch;
+        const paddedHours = hours.padStart(2, '0');
+        return `${sign}${paddedHours}:00`;
+      }
+      
       // If it's already an IANA timezone, return as is
-      if (!tz.toUpperCase().startsWith('UTC')) return tz;
+      if (!tz.toUpperCase().startsWith('UTC') && !tz.toUpperCase().startsWith('GMT')) return tz;
       
       // Convert UTC±XX to proper format
-      const match = tz.match(/^UTC([+-])(\d+)$/);
-      if (match) {
-        const [, sign, hours] = match;
+      const utcMatch = tz.match(/^UTC([+-])(\d+)$/);
+      if (utcMatch) {
+        const [, sign, hours] = utcMatch;
         const paddedHours = hours.padStart(2, '0');
         return `${sign}${paddedHours}:00`;
       }

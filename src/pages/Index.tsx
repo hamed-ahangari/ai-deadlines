@@ -14,6 +14,7 @@ import { X, ChevronRight, Filter, Globe } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
+import { hasUpcomingDeadlines } from "@/utils/deadlineUtils";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
@@ -43,12 +44,10 @@ const Index = () => {
       return [];
     }
 
-    return conferencesData
+    const filtered = conferencesData
       .filter((conf: Conference) => {
-        // Filter by deadline (past/future)
-        const deadlineDate = conf.deadline && conf.deadline !== 'TBD' ? parseISO(conf.deadline) : null;
-        const isUpcoming = !deadlineDate || !isValid(deadlineDate) || !isPast(deadlineDate);
-        if (!showPastConferences && !isUpcoming) return false;
+        // Filter by deadline (past/future) - use new deadline logic
+        if (!showPastConferences && !hasUpcomingDeadlines(conf)) return false;
 
         // Filter by tags
         const matchesTags = selectedTags.size === 0 || 
@@ -64,22 +63,10 @@ const Index = () => {
           (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
         
         return matchesTags && matchesCountry && matchesSearch;
-      })
-      .sort((a: Conference, b: Conference) => {
-        const aDeadline = getDeadlineInLocalTime(a.deadline, a.timezone);
-        const bDeadline = getDeadlineInLocalTime(b.deadline, b.timezone);
-        
-        if (aDeadline && bDeadline) {
-          return aDeadline.getTime() - bDeadline.getTime();
-        }
-        
-        // Handle cases where one or both deadlines are invalid
-        if (!aDeadline && !bDeadline) return 0;
-        if (!aDeadline) return 1;
-        if (!bDeadline) return -1;
-        
-        return 0;
       });
+    
+    // Use the proper sorting function that handles both deadline formats
+    return sortConferencesByDeadline(filtered);
   }, [selectedTags, selectedCountries, searchQuery, showPastConferences]);
 
   // Update handleTagsChange to handle multiple tags

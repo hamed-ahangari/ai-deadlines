@@ -68,8 +68,12 @@
   id: icassp26
   full_name: International Conference on Acoustics, Speech and Signal Processing
   link: https://2026.ieeeicassp.org
-  deadline: '2025-09-17 23:59:59'
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: '2025-09-18 08:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
   city: Barcelona
   country: Spain
   venue: Barcelona International Convention Center (CCIB), Barcelona, Spain
@@ -295,7 +299,11 @@
   id: icassp25
   full_name: International Conference on Acoustics, Speech and Signal Processing
   link: https://2025.ieeeicassp.org/
-  deadline: '2024-09-09 23:59:59'
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: '2025-09-18 08:59:59'
+      timezone: GMT+02
   timezone: UTC-12
   city: Hyderabad
   country: India
@@ -1061,7 +1069,11 @@
   id: icra26
   full_name: International Conference on Robotics and Automation
   link: https://2026.ieee-icra.org/
-  deadline: '2025-09-15 23:59:59'
+  deadlines: 
+    - type: submission
+      label: Paper Submission
+      date: '2025-09-15 23:59:59'
+      timezone: GMT-08
   timezone: PST
   city: Vienna
   country: Austria
