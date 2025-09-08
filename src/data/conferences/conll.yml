@@ -1,0 +1,16 @@
+- title: CoNLL
+  year: 2025
+  id: conll25
+  full_name: The SIGNLL Conference on Computational Natural Language Learning
+  link: https://conll.org/
+  deadline: 2025-03-15 12:00
+  timezone: UTC-12
+  city: Vienna
+  country: Austria
+  date: July 31 - August 1, 2025
+  start: '2025-07-31'
+  end: '2025-08-01'
+  tags:
+  - natural-language-processing
+  rankings: 'CCF: B, CORE: A, THCPL: B'
+  venue: Vienna, Austria

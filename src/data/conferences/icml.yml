@@ -1,0 +1,17 @@
+- title: ICML
+  year: 2025
+  id: icml25
+  full_name: International Conference on Machine Learning
+  link: https://icml.cc/Conferences/2025
+  deadline: '2025-01-30 23:59:59'
+  timezone: UTC-12
+  date: July 11-19, 2025
+  tags:
+  - machine-learning
+  city: Vancouver
+  country: Canada
+  abstract_deadline: '2025-01-23 23:59:59'
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  venue: Vancouver Convention Center
+  submission_deadline: '2025-01-31 03:59:59'
+  timezone_submission: PST

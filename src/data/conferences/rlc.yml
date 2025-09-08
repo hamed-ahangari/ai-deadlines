@@ -1,0 +1,16 @@
+- title: RLC
+  year: 2025
+  id: rlc25
+  full_name: Reinforcement Learning Conference
+  link: https://rl-conference.cc/
+  deadline: '2025-02-28 23:59:59'
+  abstract_deadline: '2025-02-21 23:59:59'
+  final_decision_date: '2025-05-09'
+  timezone: UTC-12
+  city: Edmonton
+  country: Canada
+  date: August 5 - August 8, 2025
+  tags:
+  - machine-learning
+  - reinforcement-learning
+  note: Mandatory abstract deadline on Feb 21, 2025.

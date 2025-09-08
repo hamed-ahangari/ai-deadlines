@@ -1,0 +1,20 @@
+- title: ICCV
+  year: 2025
+  id: iccv25
+  full_name: IEEE International Conference on Computer Vision
+  link: https://iccv.thecvf.com/Conferences/2025
+  deadline: '2025-03-08 09:59:59'
+  timezone: UTC+0
+  date: October 19-25, 2025
+  tags:
+  - machine-learning
+  - computer-vision
+  city: Honolulu
+  country: Hawaii
+  abstract_deadline: '2025-03-04 09:59:59'
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  rebuttal_period_start: '2025-05-10'
+  rebuttal_period_end: '2025-05-16'
+  final_decision_date: '2025-06-20'
+  review_release_date: '2025-05-09'
+  note: All info can be found <a href='https://iccv.thecvf.com/Conferences/2025/CallForPapers'>here</a>.

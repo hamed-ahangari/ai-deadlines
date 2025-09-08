@@ -1,0 +1,13 @@
+- title: Eurographics
+  year: 2025
+  id: eurographics25
+  full_name: The 46th Annual Conference of the European Association for Computer Graphics
+  link: https://www.eg.org/wp/event/eurographics-2025/
+  deadline: '2024-10-03 23:59:59'
+  timezone: UTC+1
+  city: London
+  country: UK
+  date: May 12 - 16, 2025
+  tags:
+  - computer-graphics
+  venue: London

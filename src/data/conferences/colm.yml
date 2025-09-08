@@ -1,0 +1,15 @@
+- title: COLM
+  year: 2025
+  id: colm25
+  full_name: Conference on Language Modeling
+  link: https://colmweb.org/cfp.html
+  deadline: '2025-03-27 23:59:59'
+  timezone: AoE
+  date: October 7-9, 2025
+  tags:
+  - natural-language-processing
+  city: Montreal
+  country: Canada
+  abstract_deadline: '2025-03-20 23:59:59'
+  rankings: 'CCF: N, CORE: N, THCPL: N'
+  venue: Palais des Congrès Montreal, Canada

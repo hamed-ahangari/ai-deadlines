@@ -1,0 +1,13 @@
+- title: UAI
+  year: 2025
+  id: uai25
+  full_name: Conference on Uncertainty in Artificial Intelligence
+  link: https://www.auai.org/uai2025/
+  deadline: '2025-02-10 23:59:59'
+  timezone: AoE
+  date: July 21-25, 2025
+  tags:
+  - machine-learning
+  city: Rio de Janeiro
+  country: Brazil
+  rankings: 'CCF: B, CORE: A, THCPL: B'

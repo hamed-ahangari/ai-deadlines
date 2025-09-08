@@ -1,0 +1,20 @@
+- title: CIKM
+  year: 2025
+  id: cikm25
+  full_name: Conference on Information and Knowledge Management
+  note: Abstract deadline on May 16, 2025
+  link: https://cikm2025.org/
+  deadline: '2025-05-23 23:59:00'
+  timezone: UTC-12
+  city: Seoul
+  country: South Korea
+  venue: COEX, Seoul, South Korea
+  date: November 11-14, 2025
+  start: 2025-11-11
+  end: 2025-11-14
+  tags:
+  - web-search
+  - data-mining
+  - machine-learning
+  abstract_deadline: '2025-05-16 23:59:00'
+  hindex: 91.0

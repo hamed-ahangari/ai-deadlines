@@ -1,0 +1,15 @@
+- title: SIGGRAPH
+  year: 2025
+  id: siggraph25
+  full_name: Conference on Computer Graphics and Interactive Techniques
+  link: https://s2025.siggraph.org/
+  deadline: '2025-01-16 23:59:59'
+  timezone: UTC-8
+  city: Vancouver
+  country: Canada
+  venue: Convention Centre, Vancouver, Canada
+  date: August 10-14, 2025
+  start: '2025-08-10'
+  end: '2025-08-14'
+  tags:
+  - computer-graphics

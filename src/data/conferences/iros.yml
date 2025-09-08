@@ -1,0 +1,13 @@
+- title: IROS
+  year: 2025
+  id: iros25
+  full_name: IEEE\RSJ International Conference on Intelligent Robots and Systems
+  link: http://www.iros25.org/
+  deadline: '2025-03-01 23:59:59'
+  timezone: UTC-8
+  date: October 19-25, 2025
+  tags:
+  - robotics
+  city: Hangzhou
+  country: China
+  rankings: 'CCF: C, CORE: A, THCPL: B'

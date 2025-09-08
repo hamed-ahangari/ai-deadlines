@@ -1,0 +1,14 @@
+- title: ESANN
+  year: 2025
+  id: esann25
+  full_name: European Symposium on Artificial Neural Networks, Computational Intelligence
+    and Machine Learning
+  link: https://www.esann.org/
+  deadline: '2024-11-20 00:00:00'
+  timezone: UTC-8
+  date: April 23 - April 25, 2025
+  tags: []
+  city: Bruges
+  country: Belgium
+  abstract_deadline: '2024-11-20 00:00:00'
+  rankings: 'CCF: N, CORE: B, THCPL: N'

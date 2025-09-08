@@ -1,0 +1,18 @@
+- title: LREC
+  year: 2026
+  id: lrec26
+  full_name: Language Resources and Evaluation Conference
+  link: https://www.elra.info/lrec2026/
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2025-10-18 13:59:59'
+    timezone: GMT+02
+  timezone: GMT+02
+  date: May 11-16, 2026
+  city: Palma, Mallorca
+  country: Spain
+  start: 2026-05-11
+  end: 2026-05-16
+  tags:
+  - natural-language-processing

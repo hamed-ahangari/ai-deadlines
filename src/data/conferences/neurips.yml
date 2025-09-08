@@ -1,0 +1,15 @@
+- title: NeurIPS
+  year: 2025
+  id: neurips25
+  full_name: Conference on Neural Information Processing Systems
+  link: https://neurips.cc/
+  deadline: '2025-05-16 23:59:59'
+  timezone: UTC-8
+  city: San Diego
+  country: USA
+  venue: San Diego Convention Center, San Diego, USA
+  date: December 9-15, 2025
+  start: '2025-12-09'
+  end: '2025-12-15'
+  tags:
+  - machine-learning

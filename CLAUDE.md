@@ -32,7 +32,7 @@ npm preview
 - **Frontend**: React 18 + TypeScript + Vite
 - **UI Framework**: shadcn-ui components with Radix UI primitives
 - **Styling**: Tailwind CSS with custom animations
-- **Data Source**: Static YAML file (`src/data/conferences.yml`) updated via GitHub Actions
+- **Data Source**: Individual YAML files per conference (`src/data/conferences/`) updated via GitHub Actions
 - **State Management**: React hooks, no external state management library
 
 ### Key Directories
@@ -65,7 +65,7 @@ Conferences are defined by the `Conference` interface in `src/types/conference.t
 - `tsconfig.json` - TypeScript configuration
 
 ### Data Updates
-Conference data is automatically updated via GitHub Actions workflow (`.github/workflows/update-conferences.yml`) that fetches from ccfddl repository and creates pull requests with updates.
+Conference data is automatically updated via GitHub Actions workflow (`.github/workflows/update-conferences.yml`) that fetches from ccfddl repository and creates pull requests with updates to individual conference files.
 
 ### Path Aliases
 - `@/*` maps to `src/*` for cleaner imports

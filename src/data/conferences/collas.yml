@@ -1,0 +1,17 @@
+- title: CoLLAs
+  year: 2025
+  id: collas25
+  full_name: Conference on Lifelong Learning Agents
+  link: https://lifelong-ml.cc
+  deadline: '2025-03-03 23:59:59'
+  abstract_deadline: '2025-02-26 23:59:59'
+  timezone: UTC-12
+  city: Philadelphia
+  country: USA
+  date: August 11-14, 2025
+  start: 2025-08-11
+  end: 2025-08-14
+  tags:
+  - machine-learning
+  - lifelong-learning
+  note: Abstract deadline on February 26, 2025. More info <a href='https://lifelong-ml.cc/Conferences/2025/call'>here</a>

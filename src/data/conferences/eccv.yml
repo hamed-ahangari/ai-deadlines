@@ -1,0 +1,12 @@
+- title: ECCV
+  year: 2026
+  id: eecv26
+  full_name: European Conference on Computer Vision
+  link: https://eccv.ecva.net/Conferences/2026
+  deadline: '2026-03-06 11:00:00'
+  timezone: UTC+0
+  city: Malmö
+  country: Sweden
+  date: September 8 - September 13, 2026
+  tags:
+  - computer-vision

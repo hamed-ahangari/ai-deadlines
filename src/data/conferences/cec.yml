@@ -1,0 +1,13 @@
+- title: CEC
+  year: 2025
+  id: cec2025
+  full_name: IEEE Congress on Evolutionary Computation
+  link: https://www.cec2025.org/
+  deadline: '2025-01-15 23:59:59'
+  timezone: UTC-12
+  date: June 8-12, 2025
+  tags:
+  - machine-learning
+  city: Hangzhou
+  country: China
+  rankings: 'CCF: N, CORE: B, THCPL: N'

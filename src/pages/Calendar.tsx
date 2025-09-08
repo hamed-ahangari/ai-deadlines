@@ -1,5 +1,5 @@
 import { useState } from "react";
-import conferencesData from "@/data/conferences.yml";
+import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
 import { Calendar as CalendarIcon, Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
 import { Calendar } from "@/components/ui/calendar";

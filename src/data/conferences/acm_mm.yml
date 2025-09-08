@@ -1,0 +1,22 @@
+- title: ACM MM
+  year: 2025
+  id: acm25
+  full_name: ACM Multimedia
+  link: https://acmmm2025.org/
+  deadline: '2025-04-11 23:59:59'
+  abstract_deadline: '2025-04-04 23:59:59'
+  rebuttal_period_start: '2025-06-22'
+  rebuttal_period_end: '2025-06-09'
+  final_decision_date: '2025-07-04'
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  date: October 27-31, 2025
+  start: '2025-10-27'
+  end: '2025-10-31'
+  venue: Dublin Royal Convention Center, Dublin, Ireland
+  note: All important dates can be found <a href='https://acmmm2025.org/important-dates/'>here</a>.
+  tags:
+  - computer-vision
+  - machine-learning
+  - human-computer-interaction

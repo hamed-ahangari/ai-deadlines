@@ -1,0 +1,14 @@
+- title: ALT
+  year: 2025
+  id: alt2025
+  full_name: International Conference on Algorithmic Learning Theory
+  link: https://algorithmiclearningtheory.org/alt2025/
+  deadline: '2024-10-01 09:59:59'
+  timezone: UTC+0
+  date: February 24-27, 2025
+  tags:
+  - machine-learning
+  city: Milan
+  country: Italy
+  rankings: 'CCF: C, CORE: B, THCPL: B'
+  venue: Politecnico di Milano, Milan, Italy

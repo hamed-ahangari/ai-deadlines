@@ -1,0 +1,17 @@
+- title: CoRL
+  year: 2025
+  id: corl25
+  full_name: The Conference on Robot Learning
+  link: https://www.corl.org/
+  deadline: '2025-04-30 23:59:59'
+  timezone: AoE
+  date: September 27-30, 2025
+  tags:
+  - machine-learning
+  - robotics
+  city: Seoul
+  country: South Korea
+  rankings: 'CCF: N, CORE: N, THCPL: N'
+  venue: COEX Convention & Exhibition Center, Seoul, South Korea
+  start: '2025-09-27'
+  end: '2025-09-30'

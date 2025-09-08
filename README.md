@@ -24,7 +24,7 @@ This project is entirely based on the awesome https://github.com/paperswithcode/
 
 New data is fetched from https://github.com/ccfddl/ccf-deadlines/tree/main/conference/AI thanks to [this comment](https://github.com/paperswithcode/ai-deadlines/issues/723#issuecomment-2603420945). 
 
-A CRON job (set up as a [Github action](.github/workflows/update-conferences.yml)) automatically updates the data present at src/data/conferences.yml.
+A CRON job (set up as a [Github action](.github/workflows/update-conferences.yml)) automatically updates the conference data in individual YAML files located in src/data/conferences/.
 
 **URL**: https://huggingface.co/spaces/huggingface/ai-deadlines
 
@@ -36,7 +36,7 @@ To keep things minimal, we mainly focus on top-tier conferences in AI.
 
 To add or update a deadline:
 - Fork the repository
-- Update [src/data/conferences.yml](src/data/conferences.yml)
+- Update the appropriate conference file in [src/data/conferences/](src/data/conferences/)
 - Make sure it has the `title`, `year`, `id`, `link`, `deadline`, `timezone`, `date`, `city`, `country`, `tags` attributes
     + See available timezone strings [here](https://momentjs.com/timezone/).
 - Optionally add a `venue`, `note` and `abstract_deadline` in case this info is known
@@ -64,7 +64,7 @@ To add or update a deadline:
       - machine learning
       note: Important
     ```
-- Send a pull request to update [src/data/conferences.yml](src/data/conferences.yml).
+- Send a pull request to update the appropriate conference file in [src/data/conferences/](src/data/conferences/).
 
 ## How to run locally
 

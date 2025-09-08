@@ -1,0 +1,39 @@
+- title: ICASSP
+  year: 2025
+  id: icassp25
+  full_name: International Conference on Acoustics, Speech and Signal Processing
+  link: https://2025.ieeeicassp.org/
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2025-09-18 08:59:59'
+    timezone: GMT+02
+  timezone: UTC-12
+  city: Hyderabad
+  country: India
+  venue: Hyderabad International Convention Center, Hyderabad, India
+  date: April 6-11, 2025
+  start: 2025-04-06
+  end: 2025-04-11
+  tags:
+  - signal-processing
+- title: ICASSP
+  year: 2026
+  id: icassp26
+  full_name: International Conference on Acoustics, Speech and Signal Processing
+  link: https://2026.ieeeicassp.org
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2025-09-18 08:59:59'
+    timezone: GMT+02
+  timezone: GMT+02
+  city: Barcelona
+  country: Spain
+  venue: Barcelona International Convention Center (CCIB), Barcelona, Spain
+  date: May 4-8, 2026
+  start: 2025-05-04
+  end: 2025-05-08
+  tags:
+  - speech
+  - signal-processing

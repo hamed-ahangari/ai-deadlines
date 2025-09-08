@@ -1,0 +1,14 @@
+- title: ICOMP
+  year: 2025
+  id: icomp25
+  full_name: International Conference on Computational Optimization
+  link: https://icomp.cc/
+  deadline: 2025-08-15 23:59
+  abstract_deadline: 2025-08-01 23:59
+  timezone: UTC-12
+  city: Abu Dhabi
+  country: UAE
+  date: October, 2025
+  tags:
+  - machine-learning
+  - optimization

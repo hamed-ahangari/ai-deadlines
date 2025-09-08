@@ -1,0 +1,19 @@
+- title: IUI
+  year: 2026
+  id: iui26
+  full_name: ACM Conference on Intelligent User Interfaces
+  link: https://iui.acm.org/2026/
+  deadlines:
+  - type: submission
+    label: Abstract deadline on 2025-10-03 23:59:59 UTC-12!
+    date: '2025-10-11 13:59:59'
+    timezone: GMT+02
+  timezone: GMT+02
+  date: March 23-26, 2026
+  city: Paphos
+  country: Cyprus
+  start: 2026-03-23
+  end: 2026-03-26
+  tags:
+  - human-computer-interaction
+  note: Abstract deadline on 2025-10-03 23:59:59 UTC-12!

@@ -1,0 +1,20 @@
+- title: MathAI 2025
+  year: 2025
+  id: MathAI2025
+  full_name: The International Conference dedicated to mathematics in artificial intelligence
+  link: https://mathai.club
+  deadline: 2025-02-20 23:59
+  abstract_deadline: 2025-02-01 23:59
+  timezone: Russia/Moscow
+  city: Sochi
+  country: Russia
+  date: March, 24-28, 2025
+  start: 2025-03-24
+  end: 2025-03-28
+  paperslink: https://openreview.net/group?id=mathai.club/MathAI/2025/Conference
+  pwclink: https://openreview.net/group?id=mathai.club/MathAI/2025/Conference
+  hindex: 100.0
+  tags:
+  - machine-learning
+  - mathematics
+  note: Abstract deadline on February 1, 2025. More info <a href='https://mathai.club/call-for-papers'>here</a>

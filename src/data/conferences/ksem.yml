@@ -1,0 +1,13 @@
+- title: KSEM
+  year: 2025
+  id: ksem25
+  full_name: International Conference on Knowledge Science, Engineering and Management
+  link: https://ksem2025.scimeeting.cn/
+  deadline: '2025-03-20 23:59:59'
+  timezone: UTC+0
+  date: August 4-6, 2025
+  tags:
+  - machine-learning
+  city: Macao
+  country: China
+  rankings: 'CCF: C, CORE: C, THCPL: N'

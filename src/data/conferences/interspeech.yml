@@ -1,0 +1,16 @@
+- title: Interspeech
+  year: 2026
+  id: interspeech2026
+  full_name: Interspeech
+  link: https://interspeech2026.org
+  deadline: '2026-03-02 23:59:59'
+  timezone: UTC-12
+  city: Sydney
+  country: Australia
+  venue: International Convention Centre (ICC) Sydney
+  date: September 27-October 1, 2026
+  start: 2026-09-27
+  end: 2026-10-01
+  tags:
+  - speech
+  - signal-processing

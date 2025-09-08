@@ -1,0 +1,19 @@
+- title: SGP
+  year: 2025
+  id: sgp25
+  full_name: Synopsium on Geometric Processing
+  link: https://sgp2025.my.canva.site/
+  deadline: '2025-02-07 23:59:59'
+  abstract_deadline: '2025-02-04 23:59:59'
+  final_decision_date: '2025-03-15'
+  timezone: UTC-12
+  city: Bilbao
+  country: Spain
+  date: June 30-July 4, 2025
+  start: '2025-06-30'
+  end: '2025-07-04'
+  venue: Bizkaia Aretoa, Bilbao, Spain
+  note: All important dates can be found <a href='https://sgp2025.my.canva.site/submit-page-sgp'>here</a>.
+  tags:
+  - computer-vision
+  - machine-learning

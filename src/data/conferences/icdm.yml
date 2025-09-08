@@ -1,0 +1,14 @@
+- title: ICDM
+  year: 2025
+  id: icdm25
+  full_name: International Conference on Data Mining
+  link: https://www3.cs.stonybrook.edu/~icdm2025/index.html
+  deadline: '2025-06-06 23:59:59'
+  timezone: AoE
+  city: Washington DC
+  country: USA
+  date: November 12 - November 15, 2025
+  start: '2025-11-12'
+  end: '2025-11-15'
+  tags:
+  - data-mining

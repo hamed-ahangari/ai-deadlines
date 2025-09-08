@@ -1,0 +1,40 @@
+- title: IJCNN
+  year: 2025
+  id: ijcnn2025
+  full_name: International Joint Conference on Neural Networks
+  link: https://2025.ijcnn.org/
+  deadline: '2025-02-05 23:59:59'
+  timezone: UTC-12
+  date: June 30 - July 5, 2025
+  tags:
+  - machine-learning
+  city: Rome
+  country: Italy
+  rankings: 'CCF: C, CORE: B, THCPL: B'
+- title: IJCNN
+  year: 2026
+  id: ijcnn26
+  full_name: International Joint Conference on Neural Networks
+  link: https://attend.ieee.org/wcci-2026/
+  deadline: '2025-09-24 23:59:59'
+  timezone: UTC-12
+  date: June 21-June 26, 2026
+  tags:
+  - machine-learning
+  city: Maastricht
+  country: Netherlands
+  rankings: 'CCF: C, CORE: B, THCPL: B'
+  venue: MECC Maastricht
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2026-01-31 23:59:59'
+    timezone: UTC-12
+  - type: notification
+    label: Paper acceptance notification
+    date: '2026-03-15 23:59:59'
+    timezone: UTC-12
+  - type: camera_ready
+    label: Camera-ready papers
+    date: '2026-05-15 23:59:59'
+    timezone: UTC-12

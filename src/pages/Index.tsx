@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import FilterBar from "@/components/FilterBar";
 import ConferenceCard from "@/components/ConferenceCard";
-import conferencesData from "@/data/conferences.yml";
+import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
 import { useState, useMemo, useEffect } from "react";
 import { Switch } from "@/components/ui/switch"

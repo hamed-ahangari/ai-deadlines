@@ -1,0 +1,15 @@
+- title: ECML PKDD
+  year: 2025
+  id: ecmlpkdd25
+  full_name: European Conference on Machine Learning and Principles and Practice of
+    Knowledge Discovery in Databases
+  link: https://ecmlpkdd.org/2025/
+  deadline: '2025-03-14 23:59:59'
+  timezone: AoE
+  city: Porto
+  country: Portugal
+  abstract_deadline: '2025-03-07 23:59:59'
+  date: September 15 - September 19, 2025
+  tags:
+  - machine-learning
+  - data-mining

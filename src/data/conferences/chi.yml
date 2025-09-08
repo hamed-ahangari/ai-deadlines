@@ -1,0 +1,36 @@
+- title: CHI
+  year: 2025
+  id: chi25
+  full_name: The ACM Conference on Human Factors in Computing Systems
+  link: https://chi2025.acm.org/
+  deadline: '2024-09-12 23:59:59'
+  abstract_deadline: '2024-09-05 23:59:59'
+  timezone: UTC-12
+  city: Yokohama
+  country: Japan
+  venue: Pacifico Yokohama Conference Center, Yokohama, Japan
+  date: April 26 - May 01, 2025
+  start: 2025-04-26
+  end: 2025-05-01
+  hindex: 122
+  tags:
+  - human-computer-interaction
+  note: Mandatory abstract deadline on Sep 05, 2024. More info <a href='https://chi2025.acm.org/for-authors/papers/'>here</a>.
+- title: CHI
+  year: 2026
+  id: chi26
+  full_name: The ACM Conference on Human Factors in Computing Systems
+  link: https://chi2026.acm.org/
+  deadline: '2025-09-11 23:59:59'
+  abstract_deadline: '2025-09-04 23:59:59'
+  timezone: UTC-12
+  city: Barcelona
+  country: Spain
+  venue: Centre de Convencions Internacional de Barcelona, Barcelona, Spain
+  date: April 13 - April 17, 2026
+  start: 2026-04-13
+  end: 2026-04-17
+  hindex: 128
+  tags:
+  - human-computer-interaction
+  note: Mandatory abstract deadline on Sep 04, 2025. More info <a href='https://chi2026.acm.org/authors/papers/'>here</a>.
