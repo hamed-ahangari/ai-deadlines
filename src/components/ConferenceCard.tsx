@@ -4,6 +4,7 @@ import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { getNextUpcomingDeadline, getPrimaryDeadline } from '@/utils/deadlineUtils';
 
 const ConferenceCard = ({
   title,
@@ -22,7 +23,15 @@ const ConferenceCard = ({
   ...conferenceProps
 }: Conference) => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const deadlineDate = getDeadlineInLocalTime(deadline, timezone);
+  
+  // Get the next upcoming deadline or primary deadline for display
+  const conference = {
+    title, full_name, year, date, deadline, timezone, tags, link, note,
+    abstract_deadline, city, country, venue, ...conferenceProps
+  };
+  
+  const nextDeadline = getNextUpcomingDeadline(conference) || getPrimaryDeadline(conference);
+  const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || timezone) : null;
   
   // Add validation before using formatDistanceToNow
   const getTimeRemaining = () => {
@@ -128,7 +137,7 @@ const ConferenceCard = ({
           <div className="flex items-center text-neutral">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
-              {deadline === 'TBD' ? 'TBD' : deadline}
+              {nextDeadline ? `${nextDeadline.label}: ${nextDeadline.date}` : (deadline === 'TBD' ? 'TBD' : deadline)}
             </span>
           </div>
           <div className="flex items-center">

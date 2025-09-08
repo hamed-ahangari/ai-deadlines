@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { getAllDeadlines, getNextUpcomingDeadline, getUpcomingDeadlines } from '@/utils/deadlineUtils';
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -26,7 +27,12 @@ interface ConferenceDialogProps {
 
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
   console.log('Conference object:', conference);
-  const deadlineDate = getDeadlineInLocalTime(conference.deadline, conference.timezone);
+  
+  // Get upcoming deadlines and the next upcoming one
+  const upcomingDeadlines = getUpcomingDeadlines(conference);
+  const nextDeadline = getNextUpcomingDeadline(conference);
+  const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone) : null;
+  
   const [countdown, setCountdown] = useState<string>('');
 
   // Replace the current location string creation with this more verbose version
@@ -236,7 +242,7 @@ END:VCALENDAR`;
             <div className="flex items-start gap-2">
               <Globe className="h-5 w-5 mt-0.5 text-gray-500" />
               <div>
-                <p className="font-medium">Location</p>
+                <p className="font-medium">Venue</p>
                 <p className="text-sm text-gray-500">
                   {conference.venue || [conference.city, conference.country].filter(Boolean).join(", ")}
                 </p>
@@ -248,32 +254,24 @@ END:VCALENDAR`;
               <div className="space-y-2 flex-1">
                 <p className="font-medium">Important Deadlines</p>
                 <div className="text-sm text-gray-500 space-y-2">
-                  {conference.abstract_deadline && (
+                  {upcomingDeadlines.length > 0 ? (
+                    upcomingDeadlines.map((deadline, index) => {
+                      const isNext = nextDeadline && deadline.date === nextDeadline.date && deadline.type === nextDeadline.type;
+                      return (
+                        <div 
+                          key={`${deadline.type}-${index}`} 
+                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 border border-blue-200' : 'bg-gray-100'}`}
+                        >
+                          <p className={isNext ? 'font-medium text-blue-800' : ''}>
+                            {deadline.label}: {formatDeadlineDate(deadline.date)}
+                            {isNext && <span className="ml-2 text-xs">(Next)</span>}
+                          </p>
+                        </div>
+                      );
+                    })
+                  ) : (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Abstract: {formatDeadlineDate(conference.abstract_deadline)}</p>
-                    </div>
-                  )}
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Submission: {formatDeadlineDate(conference.deadline)}</p>
-                  </div>
-                  {conference.commitment_deadline && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Commitment: {formatDeadlineDate(conference.commitment_deadline)}</p>
-                    </div>
-                  )}
-                  {conference.review_release_date && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Reviews Released: {formatDeadlineDate(conference.review_release_date)}</p>
-                    </div>
-                  )}
-                  {(conference.rebuttal_period_start || conference.rebuttal_period_end) && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Rebuttal Period: {formatDeadlineDate(conference.rebuttal_period_start)} - {formatDeadlineDate(conference.rebuttal_period_end)}</p>
-                    </div>
-                  )}
-                  {conference.final_decision_date && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Final Decision: {formatDeadlineDate(conference.final_decision_date)}</p>
+                      <p>No upcoming deadlines</p>
                     </div>
                   )}
                 </div>

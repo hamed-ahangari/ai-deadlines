@@ -5,6 +5,30 @@
   link: https://www2026.thewebconf.org/
   deadline: '2025-10-07 23:59:59'
   abstract_deadline: '2025-09-30 23:59:59'
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: '2025-09-30 23:59:59'
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: '2025-10-07 23:59:59'
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: '2025-11-24 00:00:00'
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: '2025-12-01 23:59:59'
+    - type: notification
+      label: Notification
+      date: '2026-01-13 23:59:59'
+      timezone: UTC-12
+    - type: camera_ready
+      label: Camera Ready
+      date: '2026-01-15 23:59:59'
+      timezone: UTC-12
   timezone: UTC-12
   city: Dubai
   country: UAE
@@ -135,6 +159,23 @@
   link: https://iclr.cc/Conferences/2026
   deadline: '2025-09-24 23:59:59'
   abstract_deadline: '2025-09-19 23:59:59'
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: '2025-09-19 23:59:59'
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: '2025-09-24 23:59:59'
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: '2026-01-20 23:59:59'
+      timezone: UTC-12
+    - type: notification
+      label: Notification
+      date: '2026-02-01 23:59:59'
+      timezone: UTC-12
   timezone: UTC-12
   city: Rio de Janeiro
   country: Brazil
