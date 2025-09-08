@@ -46,9 +46,9 @@
   abstract_deadline: '2025-09-30 23:59:59'
   deadlines:
     - type: abstract
-      label: Abstract Submission
-      date: '2025-09-30 23:59:59'
-      timezone: UTC-12
+      label: Abstract deadline on 2025-09-30 23:59:59 UTC-12!
+      date: '2025-10-08 13:59:59'
+      timezone: GMT+02
     - type: submission
       label: Paper Submission
       date: '2025-10-07 23:59:59'
@@ -68,7 +68,7 @@
       label: Camera Ready
       date: '2026-01-15 23:59:59'
       timezone: UTC-12
-  timezone: UTC-12
+  timezone: GMT+02
   city: Dubai
   country: UAE
   date: April, 13-17, 2026
@@ -87,9 +87,12 @@
   id: aistats26
   full_name: International Conference on Artificial Intelligence and Statistics
   link: https://virtual.aistats.org/Conferences/2026
-  deadline: '2025-10-02 23:59:59'
-  abstract_deadline: '2025-09-25 23:59:59'
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Abstract deadline on 2025-09-25 23:59:59 UTC-12!
+      date: '2025-10-03 13:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
   date: May 2-5, 2026
   tags:
   - machine-learning
@@ -100,7 +103,7 @@
   rankings: 'CCF: C, CORE: A, THCPL: B'
   venue: TBA
   hindex: 101
-  note: Abstract deadline on September 25, 2025. More info <a href='https://virtual.aistats.org/Conferences/2026/CallForPapers'>here</a>
+  note: Abstract deadline on 2025-09-25 23:59:59 UTC-12!
 
 - title: ICASSP
   year: 2026
@@ -133,7 +136,7 @@
   city: Sydney
   country: Australia
   venue: International Convention Centre (ICC) Sydney
-  date: September 29-October 1, 2026
+  date: September 27-October 1, 2026
   start: 2026-09-27
   end: 2026-10-01
   tags:
@@ -1124,3 +1127,82 @@
   tags:
   - robotics
   - computer-vision
+
+- title: FG
+  year: 2026
+  id: fg26
+  full_name: International Conference on Automatic Face and Gesture Recognition
+  link: https://fg2026.org/
+  deadlines:
+    - type: submission
+      label: Abstract deadline on 2025-09-25 23:59:59 UTC-8! Round 1
+      date: '2025-10-03 09:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
+  date: May 25-29, 2026
+  city: Kyoto
+  country: Japan
+  start: 2026-05-25
+  end: 2026-05-29
+  tags:
+  - computer-vision
+  note: Abstract deadline on 2025-09-25 23:59:59 UTC-8! Round 1
+
+- title: AAMAS
+  year: 2026
+  id: aamas26
+  full_name: International Conference on Autonomous Agents and Multiagent Systems
+  link: https://aamas2026.org/
+  deadlines:
+    - type: submission
+      label: Abstract deadline on 2025-10-01 23:59:59 UTC-12!
+      date: '2025-10-09 13:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
+  date: May 27-29, 2026
+  city: Paphos
+  country: Cyprus
+  start: 2026-05-27
+  end: 2026-05-29
+  tags:
+  - other
+  note: Abstract deadline on 2025-10-01 23:59:59 UTC-12!
+
+- title: IUI
+  year: 2026
+  id: iui26
+  full_name: ACM Conference on Intelligent User Interfaces
+  link: https://iui.acm.org/2026/
+  deadlines:
+    - type: submission
+      label: Abstract deadline on 2025-10-03 23:59:59 UTC-12!
+      date: '2025-10-11 13:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
+  date: March 23-26, 2026
+  city: Paphos
+  country: Cyprus
+  start: 2026-03-23
+  end: 2026-03-26
+  tags:
+  - human-computer-interaction
+  note: Abstract deadline on 2025-10-03 23:59:59 UTC-12!
+
+- title: LREC
+  year: 2026
+  id: lrec26
+  full_name: Language Resources and Evaluation Conference
+  link: https://www.elra.info/lrec2026/
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: '2025-10-18 13:59:59'
+      timezone: GMT+02
+  timezone: GMT+02
+  date: May 11-16, 2026
+  city: Palma, Mallorca
+  country: Spain
+  start: 2026-05-11
+  end: 2026-05-16
+  tags:
+  - natural-language-processing
