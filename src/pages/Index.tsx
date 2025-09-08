@@ -32,6 +32,7 @@ const Index = () => {
     { id: "data-mining", label: "Data Mining" },
     { id: "natural-language-processing", label: "Natural Language Processing" },
     { id: "signal-processing", label: "Signal Processing" },
+    { id: "speech", label: "Speech" },
     { id: "human-computer-interaction", label: "Human Computer Interaction" },
     { id: "computer-graphics", label: "Computer Graphics" },
     { id: "mathematics", label: "Mathematics" },
@@ -118,6 +119,32 @@ const Index = () => {
       const countries = countriesParam.split(',');
       setSelectedCountries(new Set(countries));
     }
+  }, []);
+
+  // Listen for URL changes from tag clicks in conference cards
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tagsParam = searchParams.get('tags');
+      const countriesParam = searchParams.get('countries');
+      
+      if (tagsParam) {
+        const tags = tagsParam.split(',');
+        setSelectedTags(new Set(tags));
+      } else {
+        setSelectedTags(new Set());
+      }
+      
+      if (countriesParam) {
+        const countries = countriesParam.split(',');
+        setSelectedCountries(new Set(countries));
+      } else {
+        setSelectedCountries(new Set());
+      }
+    };
+
+    window.addEventListener('urlchange', handleUrlChange);
+    return () => window.removeEventListener('urlchange', handleUrlChange);
   }, []);
 
   if (!Array.isArray(conferencesData)) {
