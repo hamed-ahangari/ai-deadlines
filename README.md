@@ -36,34 +36,43 @@ To keep things minimal, we mainly focus on top-tier conferences in AI.
 
 To add or update a deadline:
 - Fork the repository
-- Update the appropriate conference file in [src/data/conferences/](src/data/conferences/)
-- Make sure it has the `title`, `year`, `id`, `link`, `deadline`, `timezone`, `date`, `city`, `country`, `tags` attributes
+- Add a new block to the appropriate conference file in [src/data/conferences/](src/data/conferences/). Do not update an existing block of a previous time the conference took place but rather add a new block at the bottom of the file
+- Make sure it has the `title`, `year`, `id`, `link`, `deadlines`, `timezone`, `date`, `city`, `country`, `tags` attributes
     + See available timezone strings [here](https://momentjs.com/timezone/).
-- Optionally add a `venue`, `note` and `abstract_deadline` in case this info is known
-- Optionally add `hindex` (refers to h5-index from [here](https://scholar.google.com/citations?view_op=top_venues&vq=eng))
-- Example:
-    ```yaml
-    - title: BestConf
-      year: 2022
-      id: bestconf22  # title as lower case + last two digits of year
-      full_name: Best Conference for Anything  # full conference name
-      link: link-to-website.com
-      deadline: YYYY-MM-DD HH:SS
-      abstract_deadline: YYYY-MM-DD HH:SS
-      timezone: Asia/Seoul
-      city: Incheon
-      country: South Korea
-      venue: Incheon Conference Centre, South Korea
-      date: September, 18-22, 2022
-      start: YYYY-MM-DD
-      end: YYYY-MM-DD
-      paperslink: link-to-full-paper-list.com
-      pwclink: link-to-papers-with-code.com
-      hindex: 100.0
-      tags:
-      - machine learning
-      note: Important
-    ```
+- Optionally add a `venue`, `note` and `hindex` (this refers to the h5-index from [here](https://scholar.google.com/citations?view_op=top_venues&vq=eng)) which indicates the importance of a conference
+
+You can add any custom number of deadlines, with any custom string for the `type` and `label`. The app will simply use the first upcoming deadline to showcase a deadline counter, and display all upcoming deadlines in the conference details card.
+
+Example:
+```yaml
+- title: BestConf
+  year: 2022
+  id: bestconf22  # title as lower case + last two digits of year
+  full_name: Best Conference for Anything  # full conference name
+  link: link-to-website.com
+  deadlines:
+    - type: abstract
+      label: Abstract deadline
+      date: '2025-10-09 13:59:59'
+      timezone: GMT+02
+    - type: submission
+      label: Paper submission deadline
+      date: '2025-10-09 13:59:59'
+      timezone: GMT+02
+  timezone: Asia/Seoul
+  city: Incheon
+  country: South Korea
+  venue: Incheon Conference Centre, South Korea
+  date: September, 18-22, 2022
+  start: YYYY-MM-DD
+  end: YYYY-MM-DD
+  paperslink: link-to-full-paper-list.com
+  pwclink: link-to-papers-with-code.com
+  hindex: 100.0
+  tags:
+  - machine learning
+  note: Important
+```
 - Send a pull request to update the appropriate conference file in [src/data/conferences/](src/data/conferences/).
 
 ## How to run locally
