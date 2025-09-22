@@ -20,3 +20,27 @@
   note: OpenReview account creation deadline on Nov 1st, paper registration deadline
     on Nov 8th, supplementary materials deadline on Nov 22nd. Reviews released on
     Jan 23rd, rebuttal period ends Jan 31st, and final decisions on Feb 26th.
+
+- title: CVPR
+  year: 2026
+  id: cvpr26
+  full_name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  link: https://cvpr.thecvf.com/Conferences/2026/CallForPapers
+  deadline: '2025-11-13 23:59:59'
+  timezone: UTC-12
+  date: June 5-7, 2026
+  tags:
+  - computer-vision
+  - robotics
+  - machine-learning
+  - optimization-methods
+  - representation-learning
+  city: Denver
+  country: Colorado
+  abstract_deadline: '2025-11-06 23:59:59'
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  venue: Denver Convention Center, Denver, USA
+  hindex: 450
+  rebuttal_period_end: '2026-01-29 23:59:59'
+  final_decision_date: '2026-02-20 23:59:59'
+  review_release_date: '2026-01-22 23:59:59'
