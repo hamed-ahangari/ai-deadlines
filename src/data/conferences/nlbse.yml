@@ -1,0 +1,21 @@
+- title: NLBSE
+  year: 2026
+  id: nlbse26  # title as lower case + last two digits of year
+  full_name: The 5th International Workshop on Natural Language-based Software Engineering  # full conference name
+  link: https://nlbse2026.github.io/
+  deadlines:
+    - type: submission
+      label: Paper submission deadline
+      date: '2025-11-04 11:59:59'
+      timezone: UTC–12:00
+  timezone: UTC-12
+  city: Rio de Janeiro
+  country: Brazil
+  venue: Windsor Convention Center and Hotels
+  date: April 12-13, 2026
+  start: 2026-04-12
+  end: 2026-04-13
+  tags:
+  - natural language processing
+  - software engineering
+  note: Co-located with ICSE 2026
