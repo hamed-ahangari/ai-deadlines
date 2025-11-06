@@ -15,3 +15,27 @@
   venue: Vancouver Convention Center
   submission_deadline: '2025-01-31 03:59:59'
   timezone_submission: PST
+- title: ICML
+  year: 2026
+  id: icml26
+  full_name: International Conference on Machine Learning
+  link: https://icml.cc/Conferences/2026/CallForPapers
+  deadline: '2026-01-28 23:59:59'
+  timezone: UTC-12
+  date: Mon. Jul 6th through Sun the 12th, 2026
+  tags:
+  - machine-learning
+  deadlines:
+  - type: abstract
+    label: Abstract Submission
+    date: '2026-01-23 23:59:59'
+    timezone: UTC-12
+  - type: paper
+    label: Paper Submission
+    date: '2026-01-28 23:59:59'
+    timezone: UTC-12
+  city: Seoul, South Korea
+  country: South Korea
+  abstract_deadline: '2026-01-23 23:59:59'
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  venue:  Coex Convention & Exhibition Center
