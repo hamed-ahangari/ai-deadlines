@@ -8,8 +8,8 @@
   city: San Diego
   country: USA
   venue: San Diego Convention Center, San Diego, USA
-  date: December 9-15, 2025
-  start: '2025-12-09'
-  end: '2025-12-15'
+  date: December 2-7, 2025
+  start: '2025-12-02'
+  end: '2025-12-07'
   tags:
   - machine-learning
