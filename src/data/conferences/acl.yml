@@ -1,4 +1,21 @@
 - title: ACL
+  year: 2025
+  id: acl25
+  full_name: Annual Meeting of the Association for Computational Linguistics
+  link: https://2025.aclweb.org/
+  deadline: '2025-02-15 23:59:59'
+  timezone: UTC-12
+  date: July 27 - August 1, 2025
+  tags:
+  - natural-language-processing
+  city: Vienna
+  country: Austria
+  rankings: 'CCF: A, CORE: A*, THCPL: A'
+  final_decision_date: '2025-05-15 23:59:59'
+  commitment_deadline: '2025-04-10 23:59:59'
+  note: ARR commitment deadline on April 10th, 2025.
+
+- title: ACL
   year: 2026
   id: acl26
   full_name: Annual Meeting of the Association for Computational Linguistics
