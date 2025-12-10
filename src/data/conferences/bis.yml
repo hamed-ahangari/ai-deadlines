@@ -1,0 +1,20 @@
+- title: BIS
+  year: 2026
+  id: bis2026
+  full_name: International Conference on Business Information Systems
+  link: https://bisconf.org/2026
+  deadline: 2026-01-15 23:59
+  timezone: UTC-12
+  city: Prague
+  country: Czech Republic
+  date: June 10-12, 2026
+  start: '2026-06-10'
+  end: '2026-06-12'
+  tags:
+  - information-systems
+  - machine-learning
+  - natural-language-processing
+  - data-mining
+  - large-language-models
+  - knowledge-graphs
+  venue: Prague, Czech Republic
