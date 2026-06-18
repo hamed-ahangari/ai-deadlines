@@ -14,12 +14,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen w-full" style={{ WebkitOverflowScrolling: "touch" }}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+        <div className="min-h-screen w-full flex flex-col" style={{ WebkitOverflowScrolling: "touch" }}>
+          <div className="flex-1">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <footer className="text-center text-sm text-neutral-400 py-4 border-t border-neutral-200">
+            Forked from{" "}
+            <a
+              href="https://huggingface.co/spaces/ai-deadlines/ai-deadlines"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Hugging Face AI Deadlines
+            </a>
+          </footer>
         </div>
       </BrowserRouter>
     </TooltipProvider>
