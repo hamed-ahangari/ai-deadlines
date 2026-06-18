@@ -89,7 +89,7 @@
       date: '2026-04-21 22:00:00'
       timezone: UTC
   city: Los Angeles
-  country: United States
+  country: USA
   venue: Los Angeles Convention Center, Los Angeles, California
   date: July 19-23, 2026
   start: '2026-07-19'
@@ -105,7 +105,7 @@
   link: https://www.siggraph.org/
   deadlines: []
   city: Anaheim
-  country: United States
+  country: USA
   venue: Anaheim Convention Center, Anaheim, California
   date: August 8-12, 2027
   start: '2027-08-08'
