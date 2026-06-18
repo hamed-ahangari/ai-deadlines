@@ -1,13 +1,3 @@
----
-title: AI Deadlines
-emoji: ⚡
-colorFrom: gray
-colorTo: blue
-sdk: docker
-pinned: false
-app_port: 8080
----
-
 # AI Conference Deadlines
 
 **Live site: https://mmforens-deadlines.pages.dev/**
