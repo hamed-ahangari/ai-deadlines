@@ -15,7 +15,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
-import { hasUpcomingDeadlines } from "@/utils/deadlineUtils";
+import { hasUpcomingDeadlines, hasOpenSubmissions } from "@/utils/deadlineUtils";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
@@ -23,6 +23,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
   const [showTopTierOnly, setShowTopTierOnly] = useState(false);
+  const [showOpenSubmissionsOnly, setShowOpenSubmissionsOnly] = useState(true);
 
   const categoryButtons = useMemo(() => {
     if (!Array.isArray(conferencesData)) return [];
@@ -30,9 +31,10 @@ const Index = () => {
     const relevantConferences = conferencesData.filter((conf: Conference) => {
       if (!showPastConferences && !hasUpcomingDeadlines(conf)) return false;
       if (showTopTierOnly && conf.era_rating !== 'a') return false;
+      if (showOpenSubmissionsOnly && !hasOpenSubmissions(conf)) return false;
       return true;
     });
-    
+
     const tagCounts = new Map<string, number>();
     relevantConferences.forEach((conf: Conference) => {
       if (Array.isArray(conf.tags)) {
@@ -50,7 +52,7 @@ const Index = () => {
           word.charAt(0).toUpperCase() + word.slice(1)
         ).join(" ")
       }));
-  }, [showPastConferences, showTopTierOnly]);
+  }, [showPastConferences, showTopTierOnly, showOpenSubmissionsOnly]);
 
   const filteredConferences = useMemo(() => {
     if (!Array.isArray(conferencesData)) {
@@ -65,6 +67,9 @@ const Index = () => {
 
         // Filter by top tier (ERA A-rated conferences)
         if (showTopTierOnly && conf.era_rating !== 'a') return false;
+
+        // Filter by open submissions
+        if (showOpenSubmissionsOnly && !hasOpenSubmissions(conf)) return false;
 
         // Filter by tags
         const matchesTags = selectedTags.size === 0 || 
@@ -84,7 +89,7 @@ const Index = () => {
     
     // Use the proper sorting function that handles both deadline formats
     return sortConferencesByDeadline(filtered);
-  }, [selectedTags, selectedCountries, searchQuery, showPastConferences, showTopTierOnly]);
+  }, [selectedTags, selectedCountries, searchQuery, showPastConferences, showTopTierOnly, showOpenSubmissionsOnly]);
 
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
@@ -236,6 +241,17 @@ const Index = () => {
               />
             </div>
             
+            <div className="flex items-center gap-2 bg-white p-2 rounded-md shadow-sm">
+              <label htmlFor="open-submissions-only" className="text-sm text-neutral-600">
+                Open submissions only
+              </label>
+              <Switch
+                id="open-submissions-only"
+                checked={showOpenSubmissionsOnly}
+                onCheckedChange={setShowOpenSubmissionsOnly}
+              />
+            </div>
+
             <div className="flex items-center gap-2 bg-white p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>

@@ -171,6 +171,19 @@ export function hasUpcomingDeadlines(conference: Conference): boolean {
 }
 
 /**
+ * Check if a conference has at least one submission deadline that hasn't passed yet.
+ * Covers multi-round conferences (e.g. WACV Round 1 + Round 2).
+ */
+export function hasOpenSubmissions(conference: Conference): boolean {
+  const allDeadlines = getAllDeadlines(conference);
+  return allDeadlines.some(deadline => {
+    if (deadline.type !== 'submission') return false;
+    const deadlineDate = getDeadlineInLocalTime(deadline.date, deadline.timezone || conference.timezone);
+    return deadlineDate && isValid(deadlineDate) && !isPast(deadlineDate);
+  });
+}
+
+/**
  * Get all upcoming deadlines sorted by date
  */
 export function getUpcomingDeadlines(conference: Conference): Deadline[] {
