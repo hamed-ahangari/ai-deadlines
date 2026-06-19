@@ -18,6 +18,33 @@
   - signal-processing
 
 - title: ICASSP
+  year: 2027
+  id: icassp27
+  full_name: International Conference on Acoustics, Speech and Signal Processing
+  link: https://2027.ieeeicassp.org/
+  deadlines:
+  - type: submission
+    label: Full Paper Submission
+    date: '2026-09-16 23:59:59'
+    timezone: AoE
+  - type: notification
+    label: Paper Acceptance Notification
+    date: '2027-01-13 23:59:59'
+    timezone: AoE
+  - type: camera_ready
+    label: Final Paper Deadline
+    date: '2027-01-27 23:59:59'
+    timezone: AoE
+  city: Toronto
+  country: Canada
+  date: May 16-21, 2027
+  start: 2027-05-16
+  end: 2027-05-21
+  tags:
+  - signal-processing
+  - speech
+
+- title: ICASSP
   year: 2026
   id: icassp26
   full_name: International Conference on Acoustics, Speech and Signal Processing
