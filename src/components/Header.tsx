@@ -21,9 +21,8 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
                 className="h-8 w-8"
               />
               <span className="font-bold text-primary">
-                <span className="hidden md:inline text-2xl">AI Conference Deadlines</span>
-                <span className="hidden md:inline text-sm font-normal text-neutral-500 ml-2">MM Forensics & CV</span>
-                <span className="md:hidden text-2xl">AI Deadlines</span>
+                <span className="hidden md:inline text-xl">Conference and Workshop Deadlines for MM Forensics</span>
+                <span className="md:hidden text-lg">MM Forensics Deadlines</span>
               </span>
             </Link>
             <nav className="hidden md:flex space-x-4">
