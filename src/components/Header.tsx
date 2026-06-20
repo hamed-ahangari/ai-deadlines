@@ -15,9 +15,9 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between md:h-16 py-4 md:py-0 gap-4 md:gap-0">
           <div className="flex items-center justify-center md:justify-start w-full md:w-auto gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src="https://huggingface.co/front/assets/huggingface_logo.svg" 
-                alt="Hugging Face Logo" 
+              <img
+                src="/logo.svg"
+                alt="MM Forensics Deadlines Logo"
                 className="h-8 w-8"
               />
               <span className="font-bold text-primary">
