@@ -1,12 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Shield -->
-  <path d="M50 5L87 19v36Q87 80 50 96Q13 80 13 55V19Z" fill="#1e3a8a"/>
-  <!-- Eye white (almond shape) -->
-  <path d="M27 52 Q38 36 50 36 Q62 36 73 52 Q62 68 50 68 Q38 68 27 52Z" fill="white"/>
-  <!-- Iris -->
-  <circle cx="50" cy="52" r="10" fill="#3b82f6"/>
-  <!-- Pupil -->
-  <circle cx="50" cy="52" r="6" fill="#0f172a"/>
-  <!-- Catch light -->
-  <circle cx="54" cy="48" r="2.5" fill="white"/>
+  <!-- Clock face -->
+  <circle cx="42" cy="42" r="38" fill="#1e3a8a"/>
+  <!-- Tick marks -->
+  <line x1="42" y1="8"  x2="42" y2="15" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="76" y1="42" x2="69" y2="42" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="42" y1="76" x2="42" y2="69" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="8"  y1="42" x2="15" y2="42" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <!-- Hour hand (~10 o'clock) -->
+  <line x1="42" y1="42" x2="28" y2="27" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Minute hand (~12) -->
+  <line x1="42" y1="42" x2="42" y2="20" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="42" cy="42" r="3.5" fill="white"/>
+  <!-- Lock badge background -->
+  <circle cx="73" cy="73" r="21" fill="white"/>
+  <!-- Lock shackle -->
+  <path d="M65 72 L65 65 Q65 57 73 57 Q81 57 81 65 L81 72"
+        fill="none" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+  <!-- Lock body -->
+  <rect x="62" y="70" width="22" height="16" rx="3" fill="#1e3a8a"/>
+  <!-- Keyhole -->
+  <circle cx="73" cy="76" r="3" fill="white"/>
+  <rect x="71.5" y="76" width="3" height="5" rx="1" fill="white"/>
 </svg>
