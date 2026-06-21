@@ -1,0 +1,27 @@
+- title: DFF
+  year: 2026
+  id: dff26
+  full_name: 2nd Deepfake Forensics Workshop @ ACM MM 2026
+  link: https://iplab.dmi.unict.it/mfs/acm-dff-ws-2026/
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2026-07-16 23:59:59'
+    timezone: AoE
+  - type: notification
+    label: Author Notification
+    date: '2026-08-06 23:59:59'
+    timezone: AoE
+  - type: camera_ready
+    label: Camera-Ready Deadline
+    date: '2026-08-20 23:59:59'
+    timezone: AoE
+  date: November 10-14, 2026
+  start: '2026-11-10'
+  end: '2026-11-14'
+  city: Rio de Janeiro
+  country: Brazil
+  note: "Co-located with ACM Multimedia 2026. Topics: deepfake detection, attribution, adversarial challenges, AI-generated media forensics."
+  tags:
+  - computer-vision
+  - signal-processing
