@@ -80,54 +80,38 @@
   rankings: 'CCF: N, CORE: A, THCPL: N'
   hindex: 131
   era_rating: a
-- title: WACV
+- title: WACV R1
   year: 2027
-  id: wacv27
-  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
+  id: wacv27_r1
+  full_name: WACV 2027 Round 1 — IEEE/CVF Winter Conference on Applications of Computer Vision
   link: https://wacv.thecvf.com/
   deadlines:
   - type: registration
-    label: Round 1 Paper Registration
+    label: Paper Registration
     date: '2026-06-19 23:59:59'
     timezone: AoE
   - type: submission
-    label: Round 1 Paper Submission
+    label: Paper Submission
     date: '2026-06-26 23:59:59'
     timezone: AoE
   - type: supplementary
-    label: Round 1 Supplementary Material
+    label: Supplementary Material
     date: '2026-06-28 23:59:59'
     timezone: AoE
   - type: review_release
-    label: Round 1 Reviews and Decisions To Authors
+    label: Reviews and Decisions to Authors
     date: '2026-08-09 23:59:59'
     timezone: AoE
   - type: rebuttal_and_revision
-    label: Round 1 Rebuttal and Revision Submission
+    label: Rebuttal and Revision Submission
     date: '2026-08-21 23:59:59'
     timezone: AoE
-  - type: registration
-    label: Round 2 New Paper Registration
-    date: '2026-08-21 23:59:59'
-    timezone: AoE
-  - type: submission
-    label: Round 2 Paper Submissions
-    date: '2026-08-28 23:59:59'
-    timezone: AoE
-  - type: supplementary
-    label: Round 2 Supplemental Material
-    date: '2026-08-30 23:59:59'
-    timezone: AoE
   - type: notification
-    label: Round 1 Final Decisions Released to Authors
-    date: '2026-10-09 23:59:59'
-    timezone: AoE
-  - type: notification
-    label: Round 2 Reviews and Final Decisions to Authors
+    label: Final Decisions Released
     date: '2026-10-09 23:59:59'
     timezone: AoE
   - type: camera_ready
-    label: Camera Ready Both Rounds
+    label: Camera Ready
     date: '2026-11-02 23:59:59'
     timezone: AoE
   date: January 4 - January 8, 2027
@@ -136,6 +120,46 @@
   city: Buena Vista, FL
   country: USA
   venue: Disney Springs, Buena Vista, FL
+  note: Round 1 of 2. Round 2 submission opens Aug 21, 2026.
+  tags:
+  - machine-learning
+  - computer-vision
+  rankings: 'CCF: N, CORE: A, THCPL: N'
+  hindex: 131
+  era_rating: a
+- title: WACV R2
+  year: 2027
+  id: wacv27_r2
+  full_name: WACV 2027 Round 2 — IEEE/CVF Winter Conference on Applications of Computer Vision
+  link: https://wacv.thecvf.com/
+  deadlines:
+  - type: registration
+    label: Paper Registration
+    date: '2026-08-21 23:59:59'
+    timezone: AoE
+  - type: submission
+    label: Paper Submission
+    date: '2026-08-28 23:59:59'
+    timezone: AoE
+  - type: supplementary
+    label: Supplementary Material
+    date: '2026-08-30 23:59:59'
+    timezone: AoE
+  - type: notification
+    label: Reviews and Final Decisions
+    date: '2026-10-09 23:59:59'
+    timezone: AoE
+  - type: camera_ready
+    label: Camera Ready
+    date: '2026-11-02 23:59:59'
+    timezone: AoE
+  date: January 4 - January 8, 2027
+  start: 2027-01-04
+  end: 2027-01-08
+  city: Buena Vista, FL
+  country: USA
+  venue: Disney Springs, Buena Vista, FL
+  note: Round 2 of 2. New submissions only (not resubmissions from Round 1).
   tags:
   - machine-learning
   - computer-vision
