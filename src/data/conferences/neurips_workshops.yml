@@ -4,12 +4,16 @@
   full_name: NeurIPS 2026 Workshops
   link: https://neurips.cc/Conferences/2026/CallForWorkshops
   deadlines:
+  - type: notification
+    label: Accepted Workshop List Released
+    date: '2026-07-11 23:59:59'
+    timezone: AoE
   - type: submission
     label: Workshop Paper Submission (suggested)
     date: '2026-08-29 23:59:59'
     timezone: AoE
   - type: notification
-    label: Workshop Acceptance Notifications
+    label: Workshop Paper Accept/Reject Notifications
     date: '2026-09-29 23:59:59'
     timezone: AoE
   date: December 11-12, 2026
