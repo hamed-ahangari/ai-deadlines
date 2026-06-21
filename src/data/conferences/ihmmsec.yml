@@ -1,0 +1,23 @@
+- title: IH&MMSec
+  year: 2026
+  id: ihmmsec26
+  full_name: ACM Workshop on Information Hiding and Multimedia Security
+  link: https://www.ihmmsec.org
+  deadlines:
+  - type: submission
+    label: Paper Submission
+    date: '2026-02-16 23:59:59'
+    timezone: AoE
+  - type: notification
+    label: Author Notification
+    date: '2026-04-13 23:59:59'
+    timezone: AoE
+  date: June 17, 2026
+  start: '2026-06-17'
+  end: '2026-06-17'
+  city: Florence
+  country: Italy
+  note: "Annual ACM workshop dedicated to watermarking, steganography, steganalysis, multimedia forensics, and content authentication. Running since 2013 (14th edition)."
+  tags:
+  - signal-processing
+  - computer-vision
