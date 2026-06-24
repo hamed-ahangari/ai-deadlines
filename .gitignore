@@ -39,5 +39,10 @@ __pycache__/
 # Outputs folder
 outputs/
 
+# Generated agent feeds (built by scripts/generate-feeds.ts on every build)
+public/conferences.json
+public/conferences-open.json
+public/llms.txt
+
 # Claude Code local settings (contains secrets)
 .claude/settings.local.json
