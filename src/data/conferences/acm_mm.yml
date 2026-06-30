@@ -8,7 +8,7 @@
       label: Abstract submission for regular papers
       date: '2025-04-04 23:59:59'
       timezone: AoE
-    - type: paper
+    - type: submission
       label: Regular paper submission (including supplementary materials, if applicable)
       date: '2025-04-11 23:59:59'
       timezone: AoE
@@ -42,7 +42,7 @@
       label: Contribution registration
       date: '2026-03-25 23:59:59'
       timezone: AoE
-    - type: paper
+    - type: submission
       label: Contribution submission
       date: '2026-04-01 23:59:59'
       timezone: AoE

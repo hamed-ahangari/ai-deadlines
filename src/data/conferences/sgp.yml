@@ -8,7 +8,7 @@
       label: Abstract submission (Round 1)
       date: '2025-02-04 23:59:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Paper submission (Round 1)
       date: '2025-02-07 23:59:00'
       timezone: UTC
@@ -28,7 +28,7 @@
       label: Abstract submission (Round 2)
       date: '2025-04-08 23:59:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Paper submission (Round 2)
       date: '2025-04-11 23:59:00'
       timezone: UTC
@@ -64,7 +64,7 @@
       label: Abstract submission (Round 1)
       date: '2026-02-02 22:59:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Paper submission (Round 1)
       date: '2026-02-04 22:59:00'
       timezone: UTC
@@ -84,7 +84,7 @@
       label: Abstract submission (Round 2)
       date: '2026-04-13 22:59:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Paper submission (Round 2)
       date: '2026-04-15 22:59:00'
       timezone: UTC

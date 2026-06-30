@@ -8,7 +8,7 @@
       label: Submission form and conflicts deadline
       date: '2025-01-16 22:00:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Paper deadline
       date: '2025-01-23 22:00:00'
       timezone: UTC
@@ -40,7 +40,7 @@
       label: Technical Papers submission form deadline
       date: '2026-01-15 22:00:00'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Technical Papers deadline
       date: '2026-01-22 22:00:00'
       timezone: UTC

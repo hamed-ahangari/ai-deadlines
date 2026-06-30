@@ -8,7 +8,7 @@
       label: Abstract submission deadline
       date: '2025-05-11 23:59:59'
       timezone: AoE
-    - type: paper
+    - type: submission
       label: Paper submission deadline
       date: '2025-05-15 23:59:59'
       timezone: AoE
@@ -51,7 +51,7 @@
       label: Abstract registration deadline
       date: '2026-05-04 23:59:59'
       timezone: AoE
-    - type: paper
+    - type: submission
       label: Paper submission deadline
       date: '2026-05-06 23:59:59'
       timezone: AoE

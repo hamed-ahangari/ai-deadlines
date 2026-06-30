@@ -18,7 +18,7 @@
     label: Abstract Submission
     date: '2025-01-23 23:59:59'
     timezone: AoE
-  - type: paper
+  - type: submission
     label: Paper Submission
     date: '2025-01-30 23:59:59'
     timezone: AoE
@@ -54,7 +54,7 @@
     label: Abstract Submission
     date: '2026-01-23 23:59:59'
     timezone: AoE
-  - type: paper
+  - type: submission
     label: Paper Submission
     date: '2026-01-28 23:59:59'
     timezone: AoE

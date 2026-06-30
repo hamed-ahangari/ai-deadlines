@@ -4,7 +4,7 @@
   full_name: The 46th Annual Conference of the European Association for Computer Graphics
   link: https://eg25.cs.ucl.ac.uk/
   deadlines:
-    - type: paper
+    - type: submission
       label: Paper submission deadline
       date: '2024-10-03 23:59:59'
       timezone: UTC
@@ -27,7 +27,7 @@
       label: Abstract and submission form deadline
       date: '2025-09-22 23:59:59'
       timezone: UTC
-    - type: paper
+    - type: submission
       label: Full paper submission deadline
       date: '2025-09-26 23:59:59'
       timezone: UTC
