@@ -43,7 +43,7 @@
     label: Abstract Submission
     date: '2025-11-07 23:59:59'
     timezone: AoE
-  - type: paper
+  - type: submission
     label: Paper Submission
     date: '2025-11-13 23:59:59'
     timezone: AoE

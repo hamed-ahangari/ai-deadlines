@@ -8,7 +8,7 @@
       label: Abstract submission
       date: '2025-03-04 09:59:59'
       timezone: UTC+0
-    - type: paper
+    - type: submission
       label: Paper submission
       date: '2025-03-08 09:59:59'
       timezone: UTC+0
