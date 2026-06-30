@@ -177,7 +177,8 @@ export function hasUpcomingDeadlines(conference: Conference): boolean {
 export function hasOpenSubmissions(conference: Conference): boolean {
   const allDeadlines = getAllDeadlines(conference);
   return allDeadlines.some(deadline => {
-    if (deadline.type !== 'submission') return false;
+    // 'submission' and 'paper' both denote a paper submission deadline (data uses both).
+    if (deadline.type !== 'submission' && deadline.type !== 'paper') return false;
     const deadlineDate = getDeadlineInLocalTime(deadline.date, deadline.timezone || conference.timezone);
     return deadlineDate && isValid(deadlineDate) && !isPast(deadlineDate);
   });

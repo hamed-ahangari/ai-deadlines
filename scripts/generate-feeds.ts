@@ -81,7 +81,8 @@ function allDeadlines(conf: Conference): Deadline[] {
 
 function isOpen(conf: Conference, now: Date): boolean {
   return allDeadlines(conf).some((d) => {
-    if (d.type !== "submission") return false;
+    // 'submission' and 'paper' both denote a paper submission deadline (data uses both).
+    if (d.type !== "submission" && d.type !== "paper") return false;
     const utc = deadlineToUTC(d.date, d.timezone || conf.timezone);
     return utc !== null && utc.getTime() > now.getTime();
   });
