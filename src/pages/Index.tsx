@@ -212,7 +212,12 @@ const Index = () => {
               <Switch
                 id="show-past"
                 checked={showPastConferences}
-                onCheckedChange={setShowPastConferences}
+                onCheckedChange={(checked) => {
+                  setShowPastConferences(checked);
+                  if (checked) {
+                    setShowOpenSubmissionsOnly(false);
+                  }
+                }}
               />
             </div>
             
@@ -244,7 +249,12 @@ const Index = () => {
               <Switch
                 id="open-submissions-only"
                 checked={showOpenSubmissionsOnly}
-                onCheckedChange={setShowOpenSubmissionsOnly}
+                onCheckedChange={(checked) => {
+                  setShowOpenSubmissionsOnly(checked);
+                  if (checked) {
+                    setShowPastConferences(false);
+                  }
+                }}
               />
             </div>
 
