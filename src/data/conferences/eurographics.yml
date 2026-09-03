@@ -68,15 +68,3 @@
   tags:
   - computer-graphics
   era_rating: a
-
-- title: Eurographics
-  year: 2027
-  id: eurographics27
-  full_name: The 48th Annual Conference of the European Association for Computer Graphics
-  link: https://www.eg.org/wp/eg-events/eurographics-annual-conference/
-  city: Pisa
-  country: Italy
-  venue: Pisa, Italy
-  tags:
-  - computer-graphics
-  era_rating: a

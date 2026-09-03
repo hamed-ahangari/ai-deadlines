@@ -1,19 +1,15 @@
 import Header from "@/components/Header";
-import FilterBar from "@/components/FilterBar";
 import ConferenceCard from "@/components/ConferenceCard";
 import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
 import { useState, useMemo, useEffect } from "react";
 import { Switch } from "@/components/ui/switch"
-import { parseISO, isValid, isPast } from "date-fns";
-import { extractCountry } from "@/utils/countryExtractor";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X, ChevronRight, Filter, Globe, HelpCircle } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { getAllCountries } from "@/utils/countryExtractor";
-import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
 import { hasUpcomingDeadlines, hasOpenSubmissions } from "@/utils/deadlineUtils";
 
