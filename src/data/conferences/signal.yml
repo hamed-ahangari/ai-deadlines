@@ -1,0 +1,28 @@
+- title: SIGNAL
+  year: 2027
+  id: signal27
+  full_name: 'SIGNAL: Source-Integrated Generative-content Attribution and Labeling'
+  link: https://signal.philab.fund/
+  deadlines:
+  - type: submission
+    label: Workshop Paper Submission Deadline
+    date: '2026-10-15 23:59:59'
+    timezone: AoE
+  - type: notification
+    label: Author Notification
+    date: '2026-10-30 23:59:59'
+    timezone: AoE
+  - type: camera_ready
+    label: Camera-ready Deadline
+    date: '2026-11-20 23:59:59'
+    timezone: America/Los_Angeles
+  city: Buena Vista, FL
+  country: USA
+  venue: Disney Springs, Buena Vista, FL
+  date: January 4-5, 2027
+  start: '2027-01-04'
+  end: '2027-01-05'
+  tags:
+  - computer-vision
+  - signal-processing
+  note: Half-day in-person workshop held with WACV 2027 on watermarking, fingerprinting, deepfake detection, and content provenance across image, audio, video, model, and biological carriers. Workshop day is January 4 or 5, 2027 (day to be announced). Submission details are available at <a href='https://signal.philab.fund/cfp.html'>the call for papers</a>; submissions are handled through <a href='https://openreview.net/group?id=thecvf.com/WACV/2027/Workshop/SIGNAL'>OpenReview</a>.
