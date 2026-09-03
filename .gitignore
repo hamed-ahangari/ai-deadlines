@@ -46,3 +46,10 @@ public/llms.txt
 
 # Claude Code local settings (contains secrets)
 .claude/settings.local.json
+
+# Local hidden directories (keep repository config directories visible)
+.[!.]*/
+!.github/
+!.github/**
+!.vscode/
+!.vscode/**
