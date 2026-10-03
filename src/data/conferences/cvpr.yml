@@ -82,7 +82,7 @@
   year: 2027
   id: cvpr27
   full_name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
-  link: https://cvpr.thecvf.com/Conferences/2027/Dates
+  link: https://cvpr.thecvf.com/Conferences/2027/CallForPapers
   date: June 20-25, 2027
   start: 2027-06-20
   end: 2027-06-25
@@ -110,6 +110,14 @@
     label: Reviews Released
     date: '2027-01-25 23:59:59'
     timezone: AoE
+  - type: rebuttal_start
+    label: Rebuttal Period Starts
+    date: '2027-01-25 23:59:59'
+    timezone: AoE
+  - type: rebuttal_end
+    label: Rebuttal Period Ends
+    date: '2027-02-01 23:59:59'
+    timezone: AoE
   - type: notification
     label: Final Decisions
     date: '2027-02-25 23:59:59'
@@ -119,4 +127,4 @@
   rankings: 'CCF: A, CORE: A*, THCPL: A'
   venue: Seattle Convention Center, Seattle, USA
   hindex: 450
-  note: Paper registration deadline on Nov 10th, paper submission deadline on Nov 16th, supplementary materials deadline on Nov 23rd. Reviews released on Jan 25th and final decisions on Feb 25th. Main conference June 22-25, workshops/tutorials June 20-21. More info <a href='https://cvpr.thecvf.com/Conferences/2027/Dates'>here</a>.
+  note: Paper registration deadline on Nov 10th and paper submission deadline on Nov 16th (both fixed, no extensions), supplementary materials deadline on Nov 23rd. Reviews released on Jan 25th, rebuttal period Jan 25th-Feb 1st, and final decisions on Feb 25th. Submissions via <a href='https://openreview.net/group?id=thecvf.com/CVPR/2027/Conference'>OpenReview</a>; all co-authors need an up-to-date OpenReview profile. Main conference June 22-25, workshops/tutorials June 20-21. More info <a href='https://cvpr.thecvf.com/Conferences/2027/CallForPapers'>here</a>.
