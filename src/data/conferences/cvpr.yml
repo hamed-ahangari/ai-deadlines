@@ -125,6 +125,6 @@
   city: Seattle
   country: USA
   rankings: 'CCF: A, CORE: A*, THCPL: A'
-  venue: Seattle Convention Center, Seattle, USA
+  venue: Seattle, WA
   hindex: 450
   note: Paper registration deadline on Nov 10th and paper submission deadline on Nov 16th (both fixed, no extensions), supplementary materials deadline on Nov 23rd. Reviews released on Jan 25th, rebuttal period Jan 25th-Feb 1st, and final decisions on Feb 25th. Submissions via <a href='https://openreview.net/group?id=thecvf.com/CVPR/2027/Conference'>OpenReview</a>; all co-authors need an up-to-date OpenReview profile. Main conference June 22-25, workshops/tutorials June 20-21. More info <a href='https://cvpr.thecvf.com/Conferences/2027/CallForPapers'>here</a>.
